@@ -1,6 +1,8 @@
+
 package com.jsp.dto;
 
 public class NewBookVO {
+
 	
 	private int NewBookNum; //ISBN
 	private String NewTitle; //책제목
@@ -92,6 +94,4 @@ public class NewBookVO {
 	public void setNewNote(String newNote) {
 		NewNote = newNote;
 	}
-	
-
 }
