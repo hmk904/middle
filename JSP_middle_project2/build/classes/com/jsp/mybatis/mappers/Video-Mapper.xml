@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="Video-Mapper">
+	<sql id="search">
+		<if test="searchType == 'n'.toString()">
+			and VideoNum like '%'||#{keyword}||'%'			
+		</if>
+		<if test="searchType == 't'.toString()">
+			and VideoTitle like '%'||#{keyword}||'%'			
+		</if>
+		<if test="searchType == 'w'.toString()">
+			and VideoWriter like '%'||#{keyword}||'%'			
+		</if>
+		<if test="searchType == 'd'.toString()">
+			and VideoDate like '%'||#{keyword}||'%'
+		</if>
+		<if test="searchType == 's'.toString()">
+			and VideoSearch like '%'||#{keyword}||'%'
+		</if>
+		<if test="searchType == 'c'.toString()">
+			and VideoContent like '%'||#{keyword}||'%'
+		</if>
+	</sql>
+	
+	
+	
+	
+	<select id="selectSearchVideoList" resultType="video">
+		select
+		*
+		from
+		video
+		where VideoNum is not null  			  	
+		<include refid="search" />
+		order by VideoNum desc
+	</select>
+	<select id="selectSearchVideoListCount"  resultType="int">
+		select
+		count(*)
+		from
+		video
+		where VideoNum is not null  			  	
+		<include refid="search" />
+		order by VideoNum desc
+	</select>
+	<update id="insertVideo" >
+		insert 
+		into 
+		video(VideoNum,VideoTitle,VideoWriter,VideoContent)
+		values
+		(#{VideoNum},#{VideoTitle},#{VideoWriter},#{VideoContent})
+	</update>
+	<select id="selectVideoSeqNext" resultType="int">
+		select video_seq.nextval as VideoNum from dual
+	</select>
+	<select id="selectVideoByVideoNum"  resultType="video">
+		select * 
+		from video
+		where VideoNum=#{VideoNum}
+	</select>
+	<update id="increasevideoSearch" parameterType="int">
+		update 
+		video
+		set 
+		VideoSearch=VideoSearch+1 
+		where VideoNum=#{VideoNum}
+	</update>
+	<update id="updateVideo" parameterType="video">
+		update 
+		video
+		set 
+		VideoTitle=#{VideoTitle}, VideoContent=#{VideoContent}, videoDate=sysdate 
+		where VideoNum=#{VideoNum}
+	</update>
+	
+	<update id="deleteVideo" parameterType="int">
+		delete 
+		from video
+		where VideoNum=#{VideoNum}
+	</update>
+	
+</mapper>

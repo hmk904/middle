@@ -1,0 +1,61 @@
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<properties resource="com/jsp/properties/jdbc.properties" />
+	
+	
+	<typeAliases>
+		<typeAlias type="java.lang.String" alias="str" />
+		<typeAlias type="java.lang.Integer" alias="int" />
+		
+		<typeAlias type="com.jsp.dto.MemberVO" alias="member" />	
+		<typeAlias type="com.jsp.dto.NewBookVO"  alias="newbook"/>
+		<typeAlias type="com.jsp.dto.LibraryBookVO" alias="librarybook" />
+		<typeAlias type="com.jsp.dto.NoticeVO" alias="notice" />
+		<typeAlias type="com.jsp.dto.QuestionVO" alias="question" />
+		<typeAlias type="com.jsp.dto.HopeVO" alias="hope" />
+		<typeAlias type="com.jsp.dto.NewsVO" alias="news" />
+		<typeAlias type="com.jsp.dto.VideoVO" alias="video" />
+		<typeAlias type="com.jsp.dto.InformationVO" alias="information" />
+		<typeAlias type="com.jsp.dto.AttachInformationVO" alias="attachinformation" />
+		<typeAlias type="com.jsp.dto.AttachNewsVO" alias="attachnews" />
+		<typeAlias type="com.jsp.dto.AttachNoticeVO" alias="attachnotice" />
+		
+			
+		
+	</typeAliases>
+	
+	
+	
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="${jdbc.driverClassName}" />
+				<property name="url" value="${jdbc.url}" />
+				<property name="username" value="${jdbc.username}" />
+				<property name="password" value="${jdbc.password}" />
+				
+				<!-- pool setting -->
+				<property value="2" name="poolMaximumActiveConnections"/>
+				<property value="2" name="poolMaximumIdleConnections"/>
+			</dataSource>
+		</environment>
+	</environments>
+	<mappers>
+	    <mapper resource="com/jsp/mybatis/mappers/Member-Mapper.xml"/> 
+		<mapper resource="com/jsp/mybatis/mappers/NewBook-Mapper.xml"/>
+	    <mapper resource="com/jsp/mybatis/mappers/LibraryBook-Mapper.xml"/>
+	    <mapper resource="com/jsp/mybatis/mappers/Information-Mapper.xml"/>
+	    <mapper resource="com/jsp/mybatis/mappers/News-Mapper.xml"/>
+	    <mapper resource="com/jsp/mybatis/mappers/Notice-Mapper.xml"/>
+	    <mapper resource="com/jsp/mybatis/mappers/AttachNews-Mapper.xml"/>
+	    <mapper resource="com/jsp/mybatis/mappers/AttachNotice-Mapper.xml"/>
+	    <mapper resource="com/jsp/mybatis/mappers/AttachInformation-Mapper.xml"/>
+	    <mapper resource="com/jsp/mybatis/mappers/Hope-Mapper.xml"/>
+	    <mapper resource="com/jsp/mybatis/mappers/Question-Mapper.xml"/>
+	    <mapper resource="com/jsp/mybatis/mappers/Video-Mapper.xml"/>
+	</mappers>
+</configuration>

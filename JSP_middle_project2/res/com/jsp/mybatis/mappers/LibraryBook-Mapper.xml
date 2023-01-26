@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="LibraryBook-Mapper">
+	<sql id="search">
+		<if test="searchType == 'n'.toString() ">
+			and LibraryBookNum like '%'||#{keyword}||'%'
+		</if>
+		<if test="searchType == 't'.toString() ">
+			and LibraryBookTitle like '%'||#{keyword}||'%'
+		</if>
+		<if test="searchType == 'w'.toString() ">
+			and LibraryBookWriter like '%'||#{keyword}||'%'
+		</if>
+		<if test="searchType == 'c'.toString() ">
+			and LibraryBookCompany like '%'||#{keyword}||'%'
+		</if>
+	</sql>
+	
+	<select id="selectSearchLibraryBookList" resultType="librarybook">
+		select
+		*
+		from LibraryBook
+		where LibraryBookNum is not null
+		<include refid="search" />
+		order by LibraryBookNum desc
+	</select>
+	
+	<select id="selectSearchLibraryBookListCount" resultType="int">
+		select count(*)
+		from LibraryBook
+		where LibraryBookNum is not null
+		<include refid="search" />
+	</select>
+	
+	<select id="selectLibraryBookByISBN" parameterType="int" resultType="librarybook">
+		select
+		*
+		from LibraryBook
+		where LibraryBookNum=#{LibraryBookNum}
+	</select>
+	
+	<update id="insertLibraryBook" parameterType="librarybook">
+		insert 
+		into 
+		LibraryBook(LibraryBookNum, LibraryBookTitle, LibraryBookWriter, LibraryBookCompany, LibraryBookManagerId, LibraryBookDataType, LibraryBookIssue, LibraryBookFormal, LibraryBookGeneral, LibraryBookNote)
+		values
+		(#{LibraryBookNum}, #{LibraryBookTitle}, #{LibraryBookWriter}, #{LibraryBookCompany}, #{LibraryBookManagerId}, #{LibraryBookDataType}, #{LibraryBookIssue}, #{LibraryBookFormal}, #{LibraryBookGeneral}, #{LibraryBookNote})
+	</update>
+	
+	<update id="updateLibraryBook" parameterType="librarybook">
+		update LibraryBook 
+		set 
+		LibraryBookTitle=#{LibraryBookTitle}, LibraryBookWriter=#{LibraryBookWriter}, LibraryBookCompany=#{LibraryBookCompany}, LibraryBookManagerId=#{LibraryBookManagerId}, LibraryBookDataType=#{LibraryBookDataType}, LibraryBookIssue=#{LibraryBookIssue}
+		,LibraryBookFormal=#{LibraryBookFormal}, LibraryBookGeneral=#{LibraryBookGeneral}, LibraryBookNote=#{LibraryBookNote}
+		
+		where LibraryBookNum=#{LibraryBookNum}
+	</update>
+	
+	<update id="deleteLibraryBook" parameterType="int" >
+		delete 
+		from LibraryBook 
+		where LibraryBookNum=#{LibraryBookNum}		
+	</update>
+</mapper>

@@ -1,0 +1,75 @@
+/******** 담당부서 정보 ********/
+.charge {
+	width: 100%;
+	border: 1px solid #e8e8e8;
+	padding: 10px 20px 7px 20px;
+	margin-top: 30px;
+	overflow: hidden;
+	box-sizing: border-box;
+}
+.charge ul {
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+	padding: 0 0 4px 45px;
+	min-height: 33px;
+	background: url(/images/common/charge_ico.png) no-repeat left 3px;
+}
+.charge ul.h7_ul {
+    margin: 5px 0 10px 0; box-sizing: border-box;
+}
+.charge ul:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+.charge ul li {
+	float: left;
+	margin: 4px 0 0 25px;
+	padding: 5px 0 5px 15px;
+	background: url(/images/common/h5_bul.gif) no-repeat 5px 14px;
+	box-sizing: border-box;
+}
+.charge ul li:first-child {
+	margin: 4px 0 0 0;
+}
+.charge ul li strong {
+	display: inline;
+	font-weight: 600;
+}
+@media screen and (max-width:768px) {
+.charge ul li {	
+	width: 100%;
+	padding: 5px 0 0 15px;
+	margin: 0;
+	display: inline-block;
+}
+.charge ul li:first-child {
+	margin: 0;
+}
+}
+@media screen and (max-width:480px) {
+.charge ul {   
+    padding: 0 0 0 5px;
+	background: inherit;
+}
+.charge ul li {	
+	width: 100%;
+	padding: 5px 0 0 15px;
+	margin: 0;
+}
+}
+@media screen and (max-width:380px) {
+.charge {
+    padding: 4px 15px;
+}
+}
+@media screen and (max-width:320px) {
+.charge {
+    padding: 2px 8px;
+}
+.charge ul {
+	padding: 0;
+	background: inherit;
+}
+}

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans>
+	<!-- datasource -->
+	<bean id="sqlSessionFactory" class="com.jsp.datasource.MySqlSessionFactory" />
+
+	<!-- Repository -->
+	<bean id="memberDAO" class="com.jsp.dao.MemberDAOImpl" />
+	<bean id="hopeDAO" class="com.jsp.dao.HopeDAOImpl" />
+	<bean id="attachnewsDAO" class="com.jsp.dao.AttachNewsDAOImpl" />
+	<bean id="newsDAO" class="com.jsp.dao.NewsDAOImpl" />
+	<bean id="noticeDAO" class="com.jsp.dao.NoticeDAOImpl" />
+	<bean id="attachnoticeDAO" class="com.jsp.dao.AttachNoticeDAOImpl" />
+	<bean id="informationDAO" class="com.jsp.dao.InformationDAOImpl" />
+	<bean id="attachinformationDAO" class="com.jsp.dao.AttachInformationDAOImpl" />
+	<bean id="questionDAO" class="com.jsp.dao.QuestionDAOImpl" />
+	<bean id="videoDAO" class="com.jsp.dao.VideoDAOImpl" />
+	<bean id="newBookDAO" class="com.jsp.dao.NewBookDAOImpl" />
+	<bean id="libraryBookDAO" class="com.jsp.dao.LibraryBookDAOImpl" />
+
+	<!-- Service -->
+	<bean id="hopeService" class="com.jsp.service.HopeServiceImpl">
+		<property name="sqlSessionFactory"
+			ref-value="sqlSessionFactory" />
+		<property name="hopeDAO" ref-value="hopeDAO" />
+		<!-- <property name="attachDAO" ref-value="attachDAO" /> -->
+	</bean>
+
+	<bean id="newsService" class="com.jsp.service.NewsServiceImpl">
+		<property name="sqlSessionFactory"
+			ref-value="sqlSessionFactory" />
+		<property name="newsDAO" ref-value="newsDAO" />
+		<property name="attachnewsDAO" ref-value="attachnewsDAO" />
+	</bean>
+
+
+	<bean id="noticeService" class="com.jsp.service.NoticeServiceImpl">
+		<property name="sqlSessionFactory"
+			ref-value="sqlSessionFactory" />
+		<property name="noticeDAO" ref-value="noticeDAO" />
+		<property name="attachnoticeDAO" ref-value="attachnoticeDAO" />
+	</bean>
+	
+	<bean id="informationService"
+		class="com.jsp.service.InformationServiceImpl">
+		<property name="sqlSessionFactory"
+			ref-value="sqlSessionFactory" />
+		<property name="informationDAO" ref-value="informationDAO" />
+		<property name="attachinformationDAO" ref-value="attachinformationDAO" />
+	</bean>
+	
+	<bean id="questionService"
+		class="com.jsp.service.QuestionServiceImpl">
+		<property name="sqlSessionFactory"
+			ref-value="sqlSessionFactory" />
+		<property name="questionDAO" ref-value="questionDAO" />
+	</bean>
+	
+	<bean id="libraryBookService" class="com.jsp.service.LibraryBookServiceImpl">
+		<property name="sqlSessionFactory"
+			ref-value="sqlSessionFactory" />
+		<property name="libraryBookDAO" ref-value="libraryBookDAO" />
+		<!-- <property name="attachDAO" ref-value="attachDAO" /> -->
+	</bean>
+	
+	<bean id="newBookService" class="com.jsp.service.NewBookServiceImpl">
+		<property name="sqlSessionFactory"
+			ref-value="sqlSessionFactory" />
+		<property name="newBookDAO" ref-value="newBookDAO" />
+		<!-- <property name="attachDAO" ref-value="attachDAO" /> -->
+	</bean>
+	
+	<bean id="memberService" class="com.jsp.service.MemberServiceImpl">
+		<property name="sqlSessionFactory"
+			ref-value="sqlSessionFactory" />
+		<property name="memberDAO" ref-value="memberDAO" />
+		<!-- <property name="attachDAO" ref-value="attachDAO" /> -->
+	</bean>
+	
+	<bean id="videoService" class="com.jsp.service.VideoServiceImpl">
+		<property name="sqlSessionFactory"
+			ref-value="sqlSessionFactory" />
+		<property name="videoDAO" ref-value="videoDAO" />
+		<!-- <property name="attachDAO" ref-value="attachDAO" /> -->
+	</bean>
+</beans>
+
+
+
+
+

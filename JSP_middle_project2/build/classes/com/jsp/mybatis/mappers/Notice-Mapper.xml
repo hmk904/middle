@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Notice-Mapper">
+	<sql id="search">
+		<if test="searchType == 't'.toString()">
+			and noticeTitle like '%'||#{keyword}||'%'			
+		</if>
+		<if test="searchType == 'w'.toString()">
+			and noticeWriter like '%'||#{keyword}||'%'			
+		</if>
+		<if test="searchType == 'c'.toString()">
+			and noticeContent like '%'||#{keyword}||'%'			
+		</if>
+		<if test="searchType == 'tc'.toString()">
+			and (
+			noticeTitle like '%'||#{keyword}||'%'
+			or
+			noticeContent like '%'||#{keyword}||'%'						
+			)			
+		</if>
+		<if test="searchType == 'cw'.toString()">
+			and (
+			noticeWriter like '%'||#{keyword}||'%'
+			or
+			noticeContent like '%'||#{keyword}||'%'						
+			)			
+		</if>
+		<if test="searchType == 'tcw'.toString()">
+			and (
+			noticeTitle like '%'||#{keyword}||'%'
+			or
+			noticeWriter like '%'||#{keyword}||'%'
+			or
+			noticeContent like '%'||#{keyword}||'%'						
+			)			
+		</if>
+	</sql>
+	
+	<select id="selectSearchNoticeList" resultType="notice">
+		select
+		*
+		from
+		Notice
+		where noticeNum is not null  			  	
+		<include refid="search" />
+		order by noticeNum desc
+	</select>
+	<select id="selectSearchNoticeListCount"  resultType="int">
+		select
+		count(*)
+		from
+		Notice
+		where noticeNum is not null  			  	
+		<include refid="search" />
+		order by noticeNum desc
+	</select>
+	
+	<update id="insertNotice">
+		insert 
+		into 
+		Notice(noticeNum,noticeTitle,noticeWriter,noticeContent)
+		values
+		(#{noticeNum},#{noticeTitle},#{noticeWriter},#{noticeContent})
+	</update>
+	<select id="selectNoticeSeqNext" resultType="int">
+		select Notice_seq.nextval as noticeNum from dual
+	</select>
+	
+	
+	<select id="selectNoticeBynoticeNum"  resultType="Notice">
+		select * 
+		from Notice 
+		where noticeNum=#{noticeNum}
+	</select>
+	<update id="increasenoticeSearch" parameterType="int">
+		update 
+		Notice 
+		set 
+		noticeSearch=noticeSearch+1 
+		where noticeNum=#{noticeNum}
+	</update>
+	
+	
+	
+	<update id="updateNotice" parameterType="notice">
+		update 
+		Notice
+		set 
+		noticeTitle=#{noticeTitle}, noticeContent=#{noticeContent}, noticeDate=sysdate 
+		where noticeNum=#{noticeNum}
+	</update>
+	
+	<update id="deleteNotice" parameterType="int">
+		delete 
+		from Notice 
+		where noticeNum=#{noticeNum}
+	</update>
+	
+</mapper>
+
+
+
+

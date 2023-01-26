@@ -1,0 +1,830 @@
+@charset "utf-8";
+
+.contents li{font-size:15px;line-height:150%}
+.contents p{font-size:15px;line-height:150%}
+
+/** 반응형 스크롤 TIP **/
+.scroll_tip{display:none;}
+
+/** table style **/
+.table1{display:table;table-layout:fixed;min-width:100%;width:100%;margin:5px 0;border-top:2px solid #b2aaa3;border-bottom:1px solid #d9d9d9;border-collapse:collapse;border-spacing:0;word-break:break-all}
+.table1 > * > tr > *{padding:10px 8px;color:#777;border:1px solid #d9d9d9;border-bottom-width:0}
+.table1 > * > tr > *[scope]{color:#333;font-weight:500;text-align:center;background:#f9f9f9}
+.table1 > * > tr > *[colspan]{border-right:1px}
+.table1 thead{color:#413d39;border-bottom:1px solid #d9d9d9}
+.table1 tbody > tr > *[scope]{background:#fcfcf4}
+.table1 > * > tr:first-child > *{border-top:none}
+.table1 > * > tr > *:first-child{border-left:none}
+.table1 > * > tr > *:last-child{border-right:none}
+.table1 > * > tr > td ul{margin:0 !important}
+
+.table_no{display:table;table-layout:fixed;margin:0;border-collapse:collapse;border-spacing:0;word-break:break-all;}
+.table_no > * > tr > *{padding:4px;color:#777;border:1px solid #d9d9d9;font-size:11px;text-align:center}
+
+
+
+
+
+
+/** table aside **/
+.table_tag{text-align:right;font-size:14px !important}
+
+/** 기본탭 style **/
+.tab_style01{overflow:hidden;position:relative;margin:0 0 40px}
+.tab_style01:before{content:'';display:block;position:absolute;bottom:0;width:100%;height:1px;background:#c8c8c8}
+.tab_style01 li{float:left;position:relative;margin-left:-1px}
+.tab_style01 li:first-child{margin-left:0}
+.tab_style01 li a{display:block;padding:15px 30px;line-height:20px;color:#333;font-size:16px;font-weight:500;letter-spacing:-1px;text-align:center;border:1px solid #c8c8c8;border-bottom-width:0;z-index:1}
+.tab_style01 li:before,.tab_style01 li.on:after{content:'';display:block;position:absolute;left:0;width:100%;height:1px;z-index:5}
+.tab_style01 li.on:before{top:0;height:3px;background:#f60}
+.tab_style01 li.on:after{bottom:0;background:#fff}
+
+/** 서브탭 style **/
+.tab_style02{overflow:hidden;margin:40px 0}
+.tab_style02 li{float:left;width:15.81%;margin:2px 0.85% 2px 0}
+.tab_style02 li a{display:block;line-height:38px;color:#333;text-align:center;border:1px solid #d9d9d9;background:#ececec}
+.tab_style02 li.on a{color:#fff;border-color:#d05c34;background:#ed5824}
+
+/** 반응형 탭 20191231추가 **/
+.tab_mobile_ti{display:none}
+
+
+/** 박스스타일 **/
+.box_style01{margin:0 0 30px;padding:11px;background:url(/images/hanbatlibrary/common/bg_box_ling01.gif) repeat 0 0}
+.box_style01>div{position:relative;min-height:100px;padding:25px 25px 25px 170px !important;box-sizing:border-box;background:#fff}
+.box_style01>div:before{content:'';display:block;position:absolute;top:15px;left:50px;width:75px;height:82px;background-position:100% -104px}
+
+.box_style02{padding:25px 25px 20px;border:1px solid #efefef;display: inline-block;width:100%;box-sizing: border-box;}
+.box_style03{padding:8px 15px}
+.box_style04{margin:0 0 30px;padding:11px;background:url(/images/hanbatlibrary/common/bg_box_ling01.gif) repeat 0 0}
+.box_style04>div{position:relative;min-height:100px;padding:20px 30px; box-sizing:border-box;background:#fff}
+.box_style04>div ul.h6_ul{margin-left:0}
+
+.box_bg_gray{margin:8px 0;padding:8px 15px;border-radius:3px;background:#f7f7f7}
+.box_bg_gray ul{position:relative;padding:8px 16px;border:1px dashed #b7b7b7;border-radius:5px;background:#f1f1f1}
+
+.box_line_dotted{border:1px dotted #b7b7b7}
+
+/** lst style **/
+.lst_circle,.p_circle,.lst_num,.lst_hangul{margin:9px 0}
+.lst_circle li,.p_circle,.lst_num li,.lst_hangul li{position:relative;padding:3px 0 3px 30px;}
+.lst_circle li span,.p_circle span,.lst_num li span,.lst_hangul li span{display:block;position:absolute;left:0;width:30px;text-align:center}
+.lst_circle li span,.lst_num li span,.lst_hangul li span,.p_circle span{font-weight:500}
+.lst_circle li span{font-size:15px}
+.lst_num li span,.lst_hangul li span{font-size:14px;}
+
+.lst_num li{padding-left:24px}
+.lst_num li span{width:20px;text-align:center}
+
+.lst_hangul li{padding-left:23px}
+.lst_hangul li span{width:25px;text-align:left}
+
+.f_small{font-size:12px}
+.f_small span{line-height:18px;font-size:15px}
+
+/** 텍스트형태 버튼 **/
+.btn{overflow:visible;display:-moz-inline-stack;display:inline-block;position:relative;min-height:30px;margin:0;padding:6px 20px;color:#007d5c;font-size:15px;font-weight:400;border:1px solid #01a479;border-radius:3px;box-sizing:border-box;vertical-align:top;word-break:break-all;cursor:pointer}
+.btn span{position:relative;}
+.b_green,.b_brown,.b_orange{color:#fff !important}
+.b_green{border-color:#01a479;background:#01a479}
+.b_green:hover,.b_green:active,.b_green:focus{border-color:#00966f;background:#00966f}
+.b_brown{border-color:#898378;background:#898378}
+.b_brown:hover,.b_brown:active,.b_brown:focus{border-color:#7d786d;background:#7d786d}
+.b_orange{border-color:#e4572a;background:#e4572a}
+.b_orange:hover,.b_orange:active,.b_orange:focus{border-color:#e6400b;background:#e6400b}
+
+.b_large{min-height:37px;padding:9px 35px;font-size:14px;font-weight:500}
+.b_small{min-height:25px;padding:4px 15px;font-size:14px}
+.b_mini{min-height:22px;padding:3px 10px;font-size:13px;font-weight:normal;letter-spacing:-0.03em;border-radius:0}
+
+.b_down{padding-left:43px !important}
+.b_move{padding-left:38px !important}
+.b_arrow{padding-left:28px !important}
+.b_down:before,.b_move:before,.b_arrow:before{content:'';display:block;position:absolute;top:4px;left:10px;width:25px;height:25px;background:url(/images/hanbatlibrary/contents/bg_btn_icon.png) no-repeat}
+.b_move:before{background-position-y:-43px}
+.b_arrow:before{background-position-y:-86px}
+.b_green.b_down:before,.b_green.b_move:before,.b_green.b_arrow:before,
+.b_brown.b_down:before,.b_brown.b_move:before,.b_brown.b_arrow:before,
+.b_orange.b_down:before,.b_orange.b_move:before,.b_orange.b_arrow:before{background-position-x:-40px}
+
+.b_large.b_down:before,.b_large.b_move:before,.b_large.b_arrow:before{left:8px;width:30px;height:30px;background-position-y:-145px}
+.b_large.b_move:before{background-position-y:-188px}
+.b_large.b_arrow:before{background-position-y:-231px}
+
+.b_small.b_down{padding-left:38px !important}
+.b_small.b_move{padding-left:33px !important}
+.b_small.b_arrow{padding-left:25px !important}
+.b_small.b_down:before,.b_small.b_move:before,.b_small.b_arrow:before{left:6px}
+.b_small.b_down:before{background-position-y:0}
+.b_small.b_move:before{background-position-y:-45px}
+.b_small.b_arrow:before{background-position-y:-88px}
+
+.b_mini.b_down{padding-left:33px !important}
+.b_mini.b_move{padding-left:30px !important}
+.b_mini.b_arrow{padding-left:23px !important}
+.b_mini.b_down:before,.b_mini.b_move:before,.b_mini.b_arrow:before{top:5px;left:4px}
+.b_mini.b_down:before{background-position-y:-4px}
+.b_mini.b_move:before{background-position-y:-46px}
+.b_mini.b_arrow:before{background-position-y:-89px}
+
+/** 기본 버튼 **/
+.bd_btn_area{margin:25px 0}
+.bd_btn_area a{color:#303030;font-size:18px !important}
+.bd_btn_area a:hover,.bd_btn_area a:active,.bd_btn_area a:focus{text-decoration:underline}
+
+.bd_btn_area a,.btn_black,.btn_list,.btn_red,.btn_blue,.btn_navy,.btn_blue_violet,.btn_blue_green,.btn_green,.btn_gray{display:inline-block;position:relative;min-width:150px;margin:1px;padding:0 30px;line-height:51px;font-size:18px;text-align:center;border:1px solid #2d2d2d;border-radius:5px;box-sizing:border-box}
+.btn_black,.btn_list,.btn_red,.btn_blue,.btn_navy,.btn_blue_green,.btn_blue_violet,.btn_green,.btn_gray{color:#fff !important}
+.btn_black,.btn_list{background:#2d2d2d}
+.btn_red{border-color:#c30000 !important;background:#c30000}
+.btn_blue{border-color:#0067be !important;background:#0067be}
+.btn_navy{border-color:#003878 !important;background:#003878}
+.btn_blue_violet{border-color:#425aaf !important;background:#425aaf}
+.btn_blue_green{border-color:#01a479 !important;background:#01a479}
+.btn_green{border-color:#20b07d !important;background:#20b07d}
+.btn_gray{border-color:#525252 !important;background:#525252}
+
+/** over **/
+.btn_black:hover,.btn_black:active,.btn_black:focus{border-color:#000 !important;background:#000}
+.btn_red:hover,.btn_red:active,.btn_red:focus{border-color:#d90000 !important;background:#d90000}
+.btn_blue:hover,.btn_blue:active,.btn_blue:focus{border-color:#005ba7 !important;background:#005ba7}
+.btn_navy:hover,.btn_navy:active,.btn_navy:focus{border-color:#002c5f !important;background:#002c5f}
+.btn_blue_violet:hover,.btn_blue_violet:active,.btn_blue_violet:focus{border-color:#343d88 !important;background:#343d88}
+.btn_blue_green:hover,.btn_blue_green:active,.btn_blue_green:focus{border-color:#009275 !important;background:#009275}
+.btn_green:hover,.btn_green:active,.btn_green:focus{border-color:#15a975 !important;background:#15a975}
+.btn_gray:hover,.btn_gray:active,.btn_gray:focus{border-color:#2f2f2f !important;background:#2f2f2f}
+
+.bt_icon{text-align:left !important;padding-left:45px !important}
+.bt_icon:before{content:'';display:inline-block;position:absolute;top:50%;left:25px;}
+.bt_icon.arr_g:before,.bt_icon.arr_w:before{left:30px;width:4px;height:7px;margin-top:-4px;background-position-y:-23px}
+.bt_icon.arr_g:before{background-position-x:-318px}
+.bt_icon.arr_w:before{background-position-x:-323px}
+
+/** 버튼 **/
+.btn_st{display:inline-block;position:relative;margin:0 1px;padding:0 40px;line-height:51px;color:#fff !important;border:1px solid transparent;text-align:center;border-radius:5px;background:#2d2d2d}
+.btn_st.small{padding:0 15px;line-height:28px;font-size:14px}
+.btn_st.mini{padding:0 8px;line-height:23px}
+
+.st_bg_blue{background:#0067be}
+.st_bg_navy{background:#003878}
+.st_bg_orange{background:#dc4d0e}
+.st_bg_gray{background:#525252}
+.st_bg_green{background:#068a00}
+.st_bg_blue_green{background:#01a479}
+.st_line_blue,.st_line_navy,.st_line_orange,.st_line_gray,.st_line_green,.st_line_blue_green{background:#fff !important}
+.st_line_blue{color:#0067be !important;border-color:#0067be !important;}
+.st_line_navy{color:#003878 !important;border-color:#003878 !important;}
+.st_line_orange{color:#dc4d0e !important;border-color:#dc4d0e !important}
+.st_line_gray{color:#525252 !important;border-color:#525252 !important}
+.st_line_green{color:#068a00 !important;border-color:#068a00 !important}
+.st_line_blue_green{color:#01a479 !important;border-color:#01a479 !important}
+
+/** img view 목록 **/
+.lst_img{overflow:hidden}
+.lst_img li{float:left;margin:0 0 10px;box-sizing:border-box;}
+.lst_img li img{display:block;width:100%; height:183px;border-radius:10px}
+
+.lst_img.col3 li{width:31.53%;margin-left:1.8%}
+
+/** 컨텐츠 **/
+/** 도서관안내 > 도서관안내 > 인사말 **/
+.greating{background:url(/images/hanbatlibrary/contents/greating_img.gif)no-repeat; background-position:left top;}
+.greating .hello{margin-bottom:50px;line-height:30px;color:#6c685f;font-size:24px;font-weight:500; margin-top:0;}
+.greating .hello strong{display:block}
+.greating .hello+p{color:#474838;font-size:18px;font-weight:500; margin-bottom:5px}
+.greating .line-box{border-bottom: 1px dotted #cbccc6; margin-top:10px; padding:10px 0 30px 260px}
+.greating p{margin:25px 0;color:#6c6761}
+.greating p.txt-box strong{font-size:18px; display:block; padding:10px 0; color:#c94200}
+.greating .sign {margin:85px 0 0 0;text-align:right;font-size:16px;font-weight:500}
+
+/** 도서관안내 > 도서관안내 > 연혁 **/
+.history div{position:relative;margin:25px 0;padding:25px 20px 0 180px;border-top:3px double #eae6e1}
+.history div:first-child{margin-top:0;border-top-width:0}
+.history div h4{position:absolute;top:27px;left:20px;margin:0;padding:0;line-height:28px;color:#6b6861;font-size:22px;letter-spacing:-1px;background:none}
+.history div h4 em{color:#09925d}
+.history div h4 span{color:#ed5824}
+.history div li{position:relative;padding:3px 0 3px 110px}
+.history div li strong{display:inline-block;position:absolute;top:2px;left:0;width:100px;letter-spacing:0;color:#595550;font-size:15px;font-weight:500}
+.history div li strong:after{content:'';display:block;position:absolute;top:50%;right:1px;width:8px;height:8px;margin-top:-4px;border-radius:50%;background:#bfbfbf}
+
+/** 도서관안내 > 도서관안내 > 사진으로보는 한밭도서관 발자취 **/
+.his_photo {position:relative;min-height:220px;padding-left:320px}
+.his_photo img {display:block;position:absolute;left:0;width:293px}
+.his_photo p {margin-bottom:25px}
+
+/** 도서관안내 > 도서관안내 > 도서관현황 > 층별안내 **/
+.floor_style h4{padding:0;line-height:inherit;background:none}
+.floor_style .floor_txt{position:relative;margin-top:25px;}
+.floor_style .floor_txt a{margin:10px 0 0}
+.floor_style .floor_info{margin:10px 0 20px;text-align:center}
+.floor_style .floor_info li{display:inline;padding:0 10px}
+.floor_style .floor_info_txt{position:relative;width:90%;margin:0 auto;padding:30px 0 20px 140px;box-sizing:border-box}
+.floor_style .floor_info_txt h5{position:absolute;left:0;width:125px;margin:0;padding:0;background:none}
+.floor_style .floor_info_txt h5,.floor_style .floor_info_txt h5 span{line-height:30px}
+.floor_style .floor_info_txt ul{overflow:hidden;margin:0}
+.floor_style .floor_info_txt li{float:left;width:50%;padding-top:1px;padding-bottom:1px;box-sizing:border-box}
+
+/** 도서관안내 > 도서관안내 > 조직도 **/
+.org_search{margin-top:15px;padding:10px 15px;border-top:3px double #e5e5e5;background:#f4f4f4}
+.org_search select,.org_search input[type="text"]{height:35px;border:1px solid #cecece;box-sizing:border-box}
+.org_search select{min-width:90px;width:120px}
+.org_search input[type="text"]{width:330px;padding:0 3px;}
+.org {width:700px;min-height:440px;margin:40px auto 0}
+.org a,.org h5 span,.org strong{display:inline-block;text-align:center}
+.org h4,.org h5,.org li{position:relative;margin:0;padding:0;background:none;z-index:5}
+.org h4{text-align:center}
+.org h5 {margin:25px 0 0;text-align:right}
+.org h4 a,.org h5 span,.org strong{width:180px;height:37px;line-height:37px;color:#fff !important;border-radius:3px;}
+.org strong{height:45px; line-height:18px; padding-top:4px}
+.org strong span.orgfax{display:block; font-weight:normal; font-size:14px;}
+.org h4 a{border-color:#d2481a;border-right-color:#a04c32;border-bottom-color:#a04c32;background:#ee5825}
+.org h5 span{border-color:#46886d;border-right-color:#2b624b;border-bottom-color:#2b624b;background:#199f6c}
+.org a strong{display:block;border-color:#827f7a;border-right-color:#66625f;border-bottom-color:#66625f;background:#918e89}
+.org ul{margin:49px 0 0;}
+.org ul:after{content:'';display:block;clear:both}
+.org ul li{float:left;position:relative;width:200px;margin:0 0 0 45px;z-index:5}
+.org ul li:first-child {margin-left:0}
+.org ul li ul {margin:24px 0 0}
+.org ul li ul li{float:none;margin:0 0 5px}
+.org ul li ul li a{width:100%;line-height:33px;text-align:center;border:1px solid #e0e0e0;border-right-color:#cacaca;border-bottom-color:#cacaca;border-radius:3px;border-top-left-radius:0;box-sizing:border-box;background:#fff;}
+.org p {margin:50px 0 0;text-align:center;font-size:14px;font-weight:500;text-decoration:underline;}
+.org h4:after,.org h5:before,.org h5:after,.org ul>li:before,.org ul>li:after{content:'';display:block;position:absolute;background:#cfcfcf;z-index:1}
+.org h4:after{left:50%;width:1px;height:87px;margin-left:-5px}
+.org h5:before{top:19px;right:182px;width:172px;height:1px;}
+.org h5:after{top:62px;left:50%;width:490px;height:1px;margin-left:-249px}
+.org ul>li:before,.org ul>li:after{left:50%;width:1px;height:24px}
+.org ul>li:before{top:-24px}
+.org ul>li:after{top:45px}
+.org ul>li li:before,.org ul>li li:after{display:none}
+.org h4 a:hover,.org h4 a:active,.org h4 a:focus,.org li a:hover strong,.org li a:active strong,.org li a:focus strong,.org li li a:hover,.org li li a:active,.org li li a:focus{text-decoration:underline}
+.org h4 a:hover,.org h4 a:active,.org h4 a:focus{background:#e23900}
+.org li a,.org li a strong{display:block;width:100% !important;box-sizing:border-box}
+.org li a:hover strong,.org li a:active strong,.org li a:focus strong{background:#66625f}
+
+/** 도서관안내 > 도서관안내 > 서비스헌장 **/
+.service_charter{position:relative}
+.service_charter p:first-child{padding:0 25px;line-height:30px;font-size:20px;font-weight:500;letter-spacing:-1px}
+.service_charter p:first-child strong{font-size:24px}
+.service_charter ul{margin-top:30px;padding:30px 0 0;border-top:3px double #eae6e1}
+.service_charter ul li{position:relative;padding:30px 15px 30px 105px;border-top:1px dashed #dadada}
+.service_charter ul li:first-child{border-top-width:0}
+.service_charter ul li strong{display:block;position:absolute;left:15px;width:80px;font-size:26px;}
+
+/** 도서관안내 > 도서관안내 > 찾아오시는길 **/
+#map{width:820px;height:400px;background:#ededed}
+
+/** 도서관안내 > 도서관안내 > 관련사이트 **/
+.site_link{overflow:hidden;padding:15px 20px;border:1px solid #efefef}
+.site_link li{float:left;width:calc(25% - 16px);margin:8px;}
+.site_link li a{display:block; text-align:center;border:1px solid #e7e7e7; box-sizing:border-box; width:100%; overflow:hidden;}
+.site_link li img{display:inline-block}
+.site_link.txt_link li a{height:41px; line-height:37px; }
+
+/** 도서관안내 > 도서관안내 > 도서기증 및 납본 **/
+.step_docu{overflow:hidden;margin:10px 0 0;text-align:center}
+.step_docu > li{overflow:hidden;display:inline-block;width:calc(30% - 2px);margin:10px 1.5%;border:1px solid #bbb;border-radius:5px}
+.step_docu strong{display:block;padding:8px 0;text-align:center;border-bottom:1px dashed #bbb;background:#f1f1f1}
+.step_docu ul{padding:10px 0}
+.step_docu ul li{padding:4px 0}
+
+/** 도서관안내 > 도서관안내 > 시설대관 **/
+.step_use{overflow:hidden;margin-top:20px;padding:15px;background:#f7f7f7}
+.step_use li{float:left;position:relative;width:calc(28.33% - 2px);margin-right:5%;padding:10px 0;line-height:28px;text-align:center;border:1px solid #ababab;border-radius:3px;box-sizing:border-box;background:#fff;}
+.step_use li:nth-child(n+4){margin-top:15px}
+.step_use li:before{content:'';display:block;position:absolute;top:50%;right:-35px;width:0;margin-top:-8px;border:8px solid transparent;border-left-color:#f60}
+.step_use li:last-child:before{display:none}
+
+/** 정보검색 > 미리봄도서신청 **/
+.step_box{overflow:hidden;padding:15px;background:#f7f7f7}
+.step_box li{float:left;position:relative;width:calc(28.33% - 2px);margin-right:5%;padding:10px 0;line-height:40px;text-align:center;border:1px solid #ababab;border-radius:3px;box-sizing:border-box;background:#fff;}
+.step_box li span{color:#ec0911}
+.step_box li:before,.step_box li:after{content:'';display:block;position:absolute;top:50%;}
+.step_box li:before{right:-39px;width:0;margin-top:-8px;border:8px solid transparent;border-left-color:#f60}
+.step_box li:after{right:-23px;width:10px;height:10px;margin-top:-5px;background:#f60}
+.step_box li:nth-child(n+4){margin-top:20px;line-height:20px}
+.step_box li:nth-child(n+5){padding-top:20px;padding-bottom:20px}
+.step_box li:last-child:before,.step_box li:last-child:after{display:none}
+
+/** 사이트맵 **/
+.sitemap{overflow:hidden;position:relative}
+.sitemap div{float:left;width:31%;margin:0 3.33% 20px 0}
+.sitemap div:nth-child(3n){margin-right:0}
+.sitemap h4{margin:0;padding:0;line-height:32px;color:#fff;text-align:center;background:#ed5824}
+.sitemap div > ul{margin:20px 0  0}
+.sitemap div > ul > li{margin:0 0 8px;padding:0 0 8px;border-bottom:1px dashed #d8d8d8}
+.sitemap div > ul > li > a{position:relative;padding-left:17px;color:#666;font-weight:500}
+.sitemap div > ul > li > a:before,.sitemap ul ul li a:before{position:absolute;display:inline-block;width:5px;height:5px;}
+.sitemap div > ul > li > a:before{content:'';top:8px;left:6px;background:#909090}
+.sitemap ul ul{margin:8px 0 0;padding:8px 11px;border:1px solid #e3e3e3;background:#f8f8f8}
+.sitemap ul ul li{margin:0;padding:1px 0 2px}
+.sitemap ul ul li a{position:relative;display:inline-block;padding-left:13px;font-size:13px}
+.sitemap ul ul li a:before{content:'-';left:0}
+
+/** 로그인페이지 **/
+.site_login{display:block;position:relative;width:510px;min-height:289px;margin:0 auto;padding:40px 40px 20px ;border:1px solid #e1e1e1;box-shadow:0 0 3px 1px #e7e7e7;box-sizing:border-box}
+.site_login h4{margin-top:0}
+.site_login fieldset{position:relative;width:354px;margin:0 auto;padding:40px 80px 0 0;box-sizing:border-box}
+.site_login fieldset p{overflow:hidden;margin-bottom:2px}
+.site_login fieldset p label,.site_login fieldset p label+input{float:left;display:block;height:25px;line-height:25px}
+.site_login fieldset p label{width:60px;color:#888;font-size:13px;font-weight:500}
+.site_login fieldset p label+input{width:200px;padding:3px;border:1px solid #d0d0d0;box-sizing:border-box}
+.site_login fieldset .btn_login{display:block;position:absolute;top:39px;right:20px;width:66px;height:55px;color:#fff;font-weight:500;border:1px solid #d04311;border-radius:3px;cursor:pointer;background:#e85623}
+
+
+/** 1600px 시작 **/
+@media screen and (max-width:1600px){
+}
+/** 1600px 끝 **/
+
+/** 1400px 시작 **/
+@media screen and (max-width:1400px){
+}
+/** 1400px 끝 **/
+
+/** 1280px 시작 **/
+@media screen and (max-width:1280px){
+}
+/** 1280px 끝 **/
+
+/** 1024px 시작 **/
+@media screen and (max-width:1024px){
+	/** 도서관안내 > 도서관안내 > 조직도-전화번호검색 **/
+	.org_search select{width:20%}
+	.org_search input[type="text"]{width:63%}
+
+	/** 도서관안내 > 도서관안내 > 시설대관 **/
+	.step_use li:before{right:-31px;}
+
+	/** 정보검색 > 미리봄도서신청 **/
+	.step_box li:before{right:-35px;}
+	.step_box li:after{right:-19px;}
+}
+/** 1024px 끝 **/
+
+/** 1023px 시작 **/
+@media screen and (max-width:1023px){
+	/** 반응형 스크롤 테이블 박스 **/
+	.table_scroll{overflow-x:auto;position:relative;padding-bottom:0;}
+	.table_scroll table{min-width:700px !important;}
+	.table_scroll .fl_wrap div{width:340px !important}
+	.table_scroll .fl_wrap div:first-child{margin-right:20px}
+	.table_scroll .fl_wrap table{min-width:100% !important;}
+
+	/** 기본탭 style **/
+	.tab_style01 li{min-width:125px;}
+
+	/** 도서관안내 > 도서관안내 > 시설대관 **/
+	.step_use li:before{right:-36px;}
+
+	/** 정보검색 > 미리봄도서신청 **/
+	.step_box li:before{right:-41px;}
+	.step_box li:after{right:-25px;}
+
+}
+/** 1023px 끝 **/
+
+/** 1000px 시작 **/
+@media screen and (max-width:1000px){
+}
+/** 1000px 끝 **/
+
+/** 900px 시작 **/
+@media screen and (max-width:900px){
+
+	/** 도서관안내 > 도서관안내 > 조직도-전화번호검색 **/
+	.org_search input[type="text"]{width:65%}
+
+	/** 도서관안내 > 도서관안내 > 관련사이트 **/
+	.site_link li{width:calc(33.3% - 16px)}
+
+	/** 도서관안내 > 도서관안내 > 시설대관 **/
+	.step_use li:before{right:-33px;}
+
+	/** 정보검색 > 미리봄도서신청 **/
+	.step_box li:before{right:-37px;}
+	.step_box li:after{right:-21px;}
+}
+/** 900px 끝 **/
+
+/** 800px 시작 **/
+@media screen and (max-width:800px){
+	/** 모바일 탭메뉴 추가 **/
+	.depth2_tab{width:auto;margin-bottom:30px;}
+	.tab_mobile_ti{display:block;padding:8px 15px;border:1px solid #dfdfdf;background:url(/images/drh/common/toggle_m_bul_off.gif) no-repeat 96% 50%;}
+	.tab_mobile_ti.ov{background:url(/images/drh/common/toggle_m_bul_on.gif) no-repeat 96% 50%;}
+	
+	.tab_style01{overflow:hidden;display:none;margin:0;border:1px solid #dfdfdf;border-top:none;}
+	.tab_style01 li{float:inherit;display:block;width:100%;margin-bottom:1px;padding:0;border:0 !important;}	
+	.tab_style01 li a{display:block;padding:3px 15px;font-size:14px;font-weight:normal;text-align:left;border:0;background:#fff;}
+	.tab_style01 li:before,.tab_style01 li:after{display:none}
+	.tab_style01 li a:link,.tab_style01 li a:visited,.tab_style01 li a:active{padding:8px 15px 8px 15px;color:#636363;background:inherit;}
+	.tab_style01 li a:hover,.tab_style01 li a.on:link,.tab_style01 li a.on:visited,.tab_style01 li a.on:active,.tab_style01 li a.on:hover,.tab_style01 li a.on:focus{padding:8px 15px 8px 15px;color:#fff;text-decoration:none;background:#0fa073;}
+
+	/** 도서관안내 > 도서관안내 > 조직도-전화번호검색 **/
+	.org_search input[type="text"]{width:62%}
+
+	/** 도서관안내 > 도서관안내 > 시설대관 **/
+	.step_use li:before{right:-30px;}
+
+	/** 정보검색 > 미리봄도서신청 **/
+	.step_box li:before{right:-35px;}
+	.step_box li:after{right:-19px;}
+
+	
+/** 도서관안내 > 도서관안내 > 찾아오시는길 **/
+#map{width:100%}
+}
+/** 800px 끝 **/
+
+/** 768px 시작 **/
+@media screen and (max-width:768px){
+}
+/** 768px 끝 **/
+
+/** 736px 시작 **/
+@media screen and (max-width:736px){
+	/** 반응형 스크롤 TIP **/
+	.scroll_tip{display:block;margin:10px 0 0 0;text-align:center;}
+	.scroll_tip span{display:inline-block;height:33px;padding:5px 0 0 65px;background:url("/images/hanbatlibrary/contents/hand.png") no-repeat 0 0;}
+
+	.table_scroll table,.table_scroll .fl_wrap{min-width:700px !important;}
+	.table_scroll .fl_wrap div{width:340px !important}
+	.table_scroll .fl_wrap div:first-child{margin-right:20px}
+	.table_scroll .fl_wrap table{min-width:100% !important;}
+
+	/** 도서관안내 > 도서관안내 > 조직도-전화번호검색 **/
+	.org_search input[type="text"]{width:60%}
+	
+	/** 도서관안내 > 도서관안내 > 조직도 **/
+	.org {width:94%}
+	.org h5:before{width:141px}
+	.org h5:after{width:425px;margin-left:-217px}
+	.org ul li{margin-left:13px}
+
+	/** 도서관안내 > 도서관안내 > 서비스헌장 **/
+	.service_charter p:first-child br{display:none}
+	.service_charter p:first-child strong{display:block;margin-bottom:7px}
+	.service_charter ul{padding-top:10px}
+
+	/** 도서관안내 > 도서관안내 > 시설대관 **/
+	.step_use li{width:calc(45% - 2px);}
+	.step_use li:nth-child(n+3){margin-top:15px}
+	.step_use li:before{right:-29px;}
+
+	/** 정보검색 > 미리봄도서신청 **/
+	.step_box li:before{right:-34px;}
+	.step_box li:after{right:-18px;}
+}
+/** 736px 끝 **/
+
+/** 700px 시작 **/
+@media screen and (max-width:700px){
+
+/** 도서관안내 > 도서관안내 > 관련사이트 **/
+	.site_link{padding:10px}
+	.site_link li{width:calc(50% - 16px)}
+
+}
+/** 700px 끝 **/
+
+/** 667px 시작 **/
+@media screen and (max-width:667px){
+
+	/** 박스스타일 **/
+	.box_style01 div{padding:15px !important;}
+	.box_style01 div:before{display:none}
+	
+	/** 도서관안내 > 인사말 **/
+	.greating{background:none}
+	.greating .hello{margin-bottom:20px}
+	.greating .line-box{padding-left:0}
+
+	/** 도서관안내 > 사진으로보는 한밭도서관 발자취 **/
+	.his_photo {padding:0 20px}
+	.his_photo img {position:relative;margin:0 auto 20px}
+	
+	/** 도서관안내 > 도서관안내 > 조직도 **/
+	.org h4:after{margin-left:1px}
+	.org h5:before{width:103px}
+	.org h5:after{width:383px;margin-left:-190px}
+	.org ul li{width:31.4%;margin-left:2%}
+	.org ul li:first-child{margin-left:1%}
+	.org ul li li{width:100%}
+	.org ul li li:first-child{margin-left:0}
+
+	/** 도서관안내 > 도서관안내 > 시설대관 **/
+	.step_use li:before{right:-27px;}
+
+	/** 정보검색 > 미리봄도서신청 **/
+	.step_box li:before{right:-32px;}
+	.step_box li:after{right:-16px;}
+}
+/** 667px 끝 **/
+
+/** 640px 시작 **/
+@media screen and (max-width:640px){	
+	/** 서브탭 style **/
+	.tab_style02{margin:20px 0}	
+	
+	/** img view 목록 **/
+	.lst_img.col3 li{width:41.53%;margin-left:3.8%}
+
+	/** 도서관안내 > 도서관안내 > 조직도 **/
+	.org h5:before{width:90px}
+	.org h5:after{width:366px;margin-left:-182px}
+
+	/** 도서관안내 > 도서관현황 > 층별안내 **/
+	.floor_style .floor_txt{padding-right:0}
+	.floor_style .floor_txt a{position:relative;top:inherit;right:inherit;margin-top:10px}
+	.floor_style .floor_info+p img{display:blockwidth:100%}
+	.floor_style .floor_info_txt{width:100%;padding-left:0}
+	.floor_style .floor_info_txt h5{position:relative;width:auto;margin-bottom:10px}
+}
+/** 640px 끝 **/
+
+/** 600px 시작 **/
+@media screen and (max-width:600px){
+	/** 서브탭 style **/
+	.tab_style02 li{width:19.11%;margin-right:0.85%}
+
+	/** 도서관안내 > 연혁 **/
+	.history div{padding-right:0;padding-left:0;}
+	.history div:first-child{padding-top:0}
+	.history div h4{position:relative;top:0;left:0;padding:10px;background:#f4f4f4}
+	.history div ul{padding:15px 0 0 10px}
+
+	/** 도서관안내 > 도서관안내 > 조직도 **/
+	.org h4 a,.org h5 span,.org strong{width:100%}
+	.org h4,.org h5{text-align:left}
+	.org h4:after{left:25px}
+	.org h5{padding-left:200px}
+	.org h5:before{right:inherit;left:26px;width:174px}
+	.org h5:after{left:26px;width:399px;margin-left:0}
+
+	/** 도서관안내 > 도서관안내 > 서비스헌장 **/
+	.service_charter p:first-child{padding:0 15px;font-size:19px}
+	.service_charter p:first-child strong{font-size:26px}
+
+	/** 도서관안내 > 도서관안내 > 도서기증 및 납본 **/
+	.step_docu > li{width:29%;}
+	.step_docu ul li{font-size:13px}
+
+	/** 도서관안내 > 도서관안내 > 시설대관 **/
+	.step_use li:before{right:-25px;}
+
+	/** 정보검색 > 미리봄도서신청 **/
+	.step_box li:before{right:-31px;}
+	.step_box li:after{right:-15px;}
+}
+/** 600px 끝 **/
+
+/** 568px 시작 **/
+@media screen and (max-width:568px){
+	
+	/** img view 목록 **/
+	.lst_img.col3 li{width:43.53%;margin-left:4.8%}
+
+	/** 도서관안내 > 도서관안내 > 조직도-전화번호검색 **/
+	.org_search input[type="text"]{width:52%}
+
+	/** 도서관안내 > 도서관안내 > 조직도 **/
+	.org h5:after{width:374px}
+
+	/** 도서관안내 > 도서관안내 > 서비스헌장 **/
+	.service_charter p:first-child strong{display:inline;margin-right:5px}
+
+	/** 사이트맵 **/
+	.sitemap div{overflow:hidden;float:none;width:100%;margin-right:0}
+	
+	/** 로그인페이지 **/
+	.site_login{width:98%}
+	.site_login fieldset{width:100%;box-sizing:border-box}
+	.site_login fieldset p label+input{width:78%}
+
+	/** 도서관안내 > 도서관안내 > 시설대관 **/
+	.step_use li:before{right:-24px;}
+
+	/** 정보검색 > 미리봄도서신청 **/
+	.step_box li:before{right:-30px;}
+	.step_box li:after{right:-14px;}
+}
+/** 568px 끝 **/
+
+/** 480px 시작 **/
+@media screen and (max-width:480px){
+	/** 기본탭 style **/
+	.tab_style01 li{float:none;min-width:100%;margin-left:0}
+	.tab_style01 li.on:after{display:none}
+
+	/** 서브탭 style **/
+	.tab_style02 li{width:32.42%;margin-right:0.85%}
+	
+	/** img view 목록 **/
+	.lst_img.col3 li{float:none;width:200px;height:150px;margin:0 auto 15px}
+
+	/** 도서관안내 > 도서관현황 > 층별안내 **/	
+	.floor_style h4{margin-bottom:0}
+	.floor_style h4 span:first-child{display:block;line-height:35px}
+	.floor_style .floor_txt{margin-top:10px}
+	.floor_style .floor_info_txt li{float:none;width:100%}
+
+	/** 도서관안내 > 도서관안내 > 조직도-전화번호검색 **/
+	.org_search select,.org_search input[type="text"],.btn{min-width:100%;width:100%;box-sizing:border-box}
+	.org_search input[type="text"]{margin:2px 0}
+
+	.btn{margin:3px 0}
+
+	/** 도서관안내 > 도서관안내 > 조직도 **/
+	.org h4:after{height:490px}
+	.org h5{padding-left:80px}
+	.org h5:before{width:54px}
+	.org h5:after{display:none}
+	.org ul{padding-left:80px}
+	.org ul li{float:none;width:100%;margin:0}
+	.org ul li:first-child{margin-left:0}
+	.org ul li ul{margin:10px 0 20px;padding-left:0}
+	.org ul>li:before{top:15px;left:-54px;width:54px;height:1px}
+
+	/** 도서관안내 > 도서관안내 > 서비스헌장 **/
+	.service_charter p:first-child{padding:0;text-align:justify}
+	.service_charter p:first-child strong{display:inline;margin-right:5px;font-size:19px;}
+	.service_charter ul li{padding-left:15px}
+	.service_charter ul li:first-child{padding-top:10px}
+	.service_charter ul li strong{position:relative;top:0;left:0;width:auto;margin-bottom:5px}
+
+	/** 도서관안내 > 도서관안내 > 도서기증 및 납본 **/
+	.step_docu > li{display:block;width:calc(100% - 2px);margin:15px auto}
+	.step_docu ul li{font-size:14px}
+
+	/** 도서관안내 > 도서관안내 > 시설대관 **/
+	.step_use li{width:calc(100% - 2px);margin-right:0}
+	.step_use li:nth-child(n+2){margin-top:22px}
+	.step_use li:before{top:100%;right:50%;margin-top:8px;margin-right:-8px;border-top-color:#f60;border-left-color:transparent}
+
+	/** 정보검색 > 미리봄도서신청 **/
+	.step_box li{width:calc(43% - 2px);margin-right:7%;}
+	.step_box li:before{right:-32px;}
+	.step_box li:after{right:-16px;}
+	.step_box li:nth-child(3){padding-top:30px;padding-bottom:30px}
+	.step_box li:nth-child(n+3){margin-top:20px;line-height:20px}
+	
+	/** 로그인페이지 **/
+	.site_login{width:94%;padding:25px}
+	.site_login fieldset{padding-top:20px}
+	.site_login fieldset p label+input{width:76%}
+	.site_login fieldset .btn_login{top:19px;right:10px}
+	.site_login fieldset+p{margin-top:15px}
+	.site_login p a{ margin-bottom:3px}
+
+	/** 도서관안내 > 도서관안내 > 관련사이트 **/
+	.site_link li{width:calc(100% - 16px);}
+}
+/** 480px 끝 **/
+
+/** 414px 시작 **/
+@media screen and (max-width:414px){
+	.step_docu ul li{font-size:14px}
+
+	/** 정보검색 > 미리봄도서신청 **/
+	.step_box li:before{right:-31px;}
+	.step_box li:after{right:-15px;}
+	
+	/** 로그인페이지 **/
+	.site_login fieldset{padding-right:70px}
+	.site_login fieldset p label+input{width:71%}
+	.site_login fieldset .btn_login{right:0}
+
+	/** 도서관안내 > 도서관안내 > 찾아오시는길 **/
+	#map{height:300px}
+}
+/** 414px 끝 **/
+
+/** 384px 시작 **/
+@media screen and (max-width:384px){
+
+	/** 도서관안내 > 사진으로보는 한밭도서관 발자취 **/
+	.his_photo {padding:0}
+	.his_photo img {width:100%}
+
+	/** 정보검색 > 미리봄도서신청 **/
+	.step_box li{width:calc(100% - 2px);margin-right:0;padding:10px 0 !important}
+	.step_box li:before{top:100%;right:50%;margin-top:8px;margin-right:-8px;border-top-color:#f60;border-left-color:transparent}
+	.step_box li:after{display:none;}
+	.step_box li:nth-child(n+2){margin-top:20px}
+	.step_box li:nth-child(3){line-height:40px}
+	
+	/** 로그인페이지 **/
+	.site_login fieldset{padding-right:60px}
+	.site_login fieldset p label{width:55px}
+	.site_login fieldset p label+input{width:69%}
+	.site_login fieldset .btn_login{width:60px;right:0}
+}
+/** 384px 끝 **/
+
+/** 375px 시작 **/
+@media screen and (max-width:375px){
+	/** 서브탭 style **/
+	.tab_style02 li{width:49.13%;margin-right:0.85%}
+}
+/** 375px 끝 **/
+
+/** 360px 시작 **/
+@media screen and (max-width:360px){
+	
+	/** 로그인페이지 **/
+	.site_login fieldset{padding-right:0}
+	.site_login fieldset p label+input{width:72%}
+	.site_login fieldset .btn_login{position:relative;top:0;width:100%;height:28px;margin-top:3px}
+}
+/** 360px 끝 **/
+
+/** 320px 시작 **/
+@media screen and (max-width:320px){
+}
+/** 320px 끝 **/
+
+
+/** 조직도연계 공통사항 **/
+.area_left.org_left{width: calc(100% - 350px);}
+.org_s_search select{width:100px; height:38px; border-radius:5px;}
+.org_s_search .bd_sel_search{width:245px; min-width:245px; height:38px;}
+.org_s_search .bd_sel_search label{width:calc(100% - 50px);}
+
+.common_org{background:#f6f7f8; width:100%; margin:0 0 40px 0; padding:40px; text-align:center; box-sizing:border-box;}
+.common_org i{font-style:normal; display:block}
+.org_head,.org_head02,.org_lst,.org_lst > div,.org_lst strong,.org_lst p,.org_lst ul,.org_lst li{position:relative;}
+.org_head,.org_head02{padding-bottom:20px;}
+.org_head span,.org_head02 span{display:inline-block; width:200px; color:#fff;}
+.org_head span{background:#ee5825; height:54px; font-size:18px; font-weight:700;}
+.org_head span i{padding:16px 0;}
+.org_head02 span{background:#2c3a4b; height:48px; font-size:17px; font-weight:600;}
+.org_head02 span i{padding:10px 0;}
+.org_head:after,.org_head02:after{content:''; display:inline-block; position:absolute; width:1px; height:20px; background:#cbccce; left:calc(50% - 0.5px);}
+.org_head:after{top:54px;}
+.org_head02:after{top:48px;}
+.org_lst{padding-top:20px;}
+.org_lst:after{display:block; content:''; clear:both;}
+.org_lst > div{float:left; width:33.3%; text-align:center; box-sizing:border-box; padding:0;}
+.org_lst strong,.org_lst p,.org_lst ul li{display:block; box-sizing:border-box; margin-bottom:5px; z-index:2;}
+.org_lst strong{background:#52575c; color:#fff; font-size:16px; height:42px; line-height:40px; font-weight:600;}
+.org_lst strong,.org_lst ul li{width:200px; margin:0 auto 6px;}
+.org_lst p{background:#eef1f3; color:#151515; border:2px solid #b3bac2; font-size:14px; height:42px; line-height:36px; font-weight:600;}
+.org_lst ul{}
+.org_lst ul li{background:#fff; border:1px solid #dbe1e6; font-size:14px; height:38px; line-height:34px; color:#444;}
+.org_lst ul li:last-child{margin-bottom:0;}
+.org_lst:before{content:''; display:inline-block; position:absolute; width:calc(67% - 3px); height:1px; background:#cbccce; left:calc(16.5% + 1px); top:0;}
+.org_lst > div:after{content:''; display:inline-block; position:absolute; width:1px; height:100%; background:#cbccce; left:calc(50% - 0.5px); top:-20px;}
+.org_table.table1,.org_view .table1{border-top:2px solid #3b414d;}
+.org_table.table1 > * > tr > * ,.org_view .table1 > * > tr > *{font-size:15px; color:#555;}
+.b_table.org_view table th{border-bottom:1px solid #e2e2e2}
+
+/*** 1024px 시작 ***/
+@media screen and (max-width:1024px) {
+}
+/*** 10240px 끝 ***/
+
+/*** 1000px 시작 ***/
+@media screen and (max-width:1000px) {
+}
+/*** 1000px 끝 ***/
+
+/*** 900px 시작 ***/
+@media screen and (max-width:900px) {
+	.area_left.org_left{width:100%;}
+	.bd_top_type01 .org_s_search{margin-top:10px;}
+	.bd_top_type01 .org_s_search .bd_sel_search{float:right; margin:0; width:calc(100% - 110px); min-width:auto;}
+}
+/*** 900px 끝 ***/
+
+/*** 800px 시작 ***/
+@media (max-width:800px){
+	.org_head{padding-bottom:0;}
+	.org_head span{width:100%;}
+	.org_lst{padding-top:0;}
+	.org_lst:before,.org_head:after{display:none;}
+	.org_lst > div{float:none; width:100%; padding-top:20px;}
+	.org_lst > div:after{top:0;}
+	.org_lst strong, .org_lst ul li{width:100%;}
+}
+/*** 700px 끝 ***/
+
+/*** 700px 시작 ***/
+@media (max-width:700px){
+	.scroll_x,.scroll_x div{position:relative;}
+	.scroll_x:before{content:'';display:block;position:absolute;top:0;right:0;width:29px;height:24px;font-size:0;text-indent:-9999px;background:url(../../images/djac/contents/bg_hand.gif) no-repeat 0 0;}
+	.scroll_x div{overflow:hidden;overflow-x:scroll;position:relative;padding-top:30px;}
+	.scroll_x .table1{width:800px;}
+}
+/*** 700px 끝 ***/
+
+/*** 600px 시작 ***/
+@media screen and (max-width:600px) {
+	.org_view .table1 th{width:30%;}
+}
+/*** 600px 끝 ***/
+
+/*** 414px 시작 ***/
+@media screen and (max-width:414px) {
+	.common_org{padding:30px 20px;}
+	.org_view .table1 .al_l{padding-left:10px;}
+}
+/*** 414px 끝 ***/

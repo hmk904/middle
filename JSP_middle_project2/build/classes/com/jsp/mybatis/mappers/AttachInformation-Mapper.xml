@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="AttachInformation-Mapper">
+	
+	<select id="selectAttachInformationByAttachInformationNum" resultType="attachinformation">
+		select * 
+		from AttachInformation 
+		where AttachInformationnum= #{AttachInformationnum} 			  	
+	</select>
+	
+	<select id="selectAttachInformationByAttachInformationano"  resultType="attachinformation">
+		select *
+		from AttachInformation
+		where AttachInformationano = #{AttachInformationano}
+	</select>
+	
+	<update id="insertAttachInformation">
+		insert into 
+		AttachInformation (AttachInformationano, AttachInformationuploadpath, AttachInformationfilename, AttachInformationfiletype, AttachInformationnum, AttachInformationattacher)
+		values (AttachInformation_seq.nextval, #{AttachInformationuploadPath}, #{AttachInformationfileName},#{AttachInformationfileType}, 
+				#{AttachInformationnum},#{AttachInformationattacher} )
+	</update>
+	
+	
+	<update id="deleteAllAttachInformation">
+		delete from AttachInformation where AttachInformationano = #{AttachInformationano}
+	</update>
+	
+	<update id="deleteAttachInformation">
+		delete 
+		from AttachInformation 
+		where AttachInformationnum = #{AttachInformationnum}
+	</update>
+	
+	
+	
+</mapper>
+
+
+
+
+
+

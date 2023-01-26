@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="NewBook-Mapper">
+	<sql id="search">
+		<if test="searchType == 'n'.toString() ">
+			and newBookNum like '%'||#{keyword}||'%'
+		</if>
+		<if test="searchType == 't'.toString() ">
+			and newTitle like '%'||#{keyword}||'%'
+		</if>
+		<if test="searchType == 'w'.toString() ">
+			and newWriter like '%'||#{keyword}||'%'
+		</if>
+		<if test="searchType == 'c'.toString() ">
+			and newCompany like '%'||#{keyword}||'%'
+		</if>
+	</sql>
+	
+	<select id="selectSearchNewBookList" resultType="newbook">
+		select
+		*
+		from newBook
+		where newBookNum is not null
+		<include refid="search" />
+		order by newBookNum desc
+	</select>
+	
+	<select id="selectSearchNewBookListCount" resultType="int">
+		select count(*)
+		from newBook
+		where newBookNum is not null
+		<include refid="search" />
+	</select>
+	
+	<select id="selectNewBookByISBN" parameterType="int" resultType="newbook">
+		select
+		*
+		from newBook
+		where newBooknum=#{newBookNum}
+	</select>
+	
+	<update id="insertNewBook" parameterType="newbook">
+		insert 
+		into 
+		newBook(newBookNum, newTitle, newWriter, newCompany, newManagerId, newDataType, newIssue, newFormal, newGeneral, newNote)
+		values
+		(#{NewBookNum},#{NewTitle},#{NewWriter},#{NewCompany}, #{NewManagerId}, #{NewDataType}, #{NewIssue}, #{NewFormal}, #{NewGeneral}, #{NewNote})
+	</update>
+	
+	<update id="updateNewBook" parameterType="newbook">
+		update newBook 
+		set 
+		NewTitle=#{NewTitle}, NewWriter=#{NewWriter}, NewCompany=#{NewCompany}, NewDataType=#{NewDataType},NewIssue=#{NewIssue}, NewFormal=#{NewFormal}, NewGeneral=#{NewGeneral}, NewNote=#{NewNote} 
+		
+		where NewBookNum=#{NewBookNum}
+	</update>
+	
+	<update id="deleteNewBook" parameterType="int" >
+		delete 
+		from newBook 
+		where NewBookNum=#{NewBookNum}		
+	</update>
+</mapper>

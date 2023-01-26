@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Information-Mapper">
+	<sql id="search">
+		<if test="searchType == 't'.toString()">
+			and infoTitle like '%'||#{keyword}||'%'			
+		</if>
+		<if test="searchType == 'w'.toString()">
+			and infoWriter like '%'||#{keyword}||'%'			
+		</if>
+		<if test="searchType == 'c'.toString()">
+			and infoContent like '%'||#{keyword}||'%'			
+		</if>
+		<if test="searchType == 'tc'.toString()">
+			and (
+			infoTitle like '%'||#{keyword}||'%'
+			or
+			infoContent like '%'||#{keyword}||'%'						
+			)			
+		</if>
+		<if test="searchType == 'cw'.toString()">
+			and (
+			infoWriter like '%'||#{keyword}||'%'
+			or
+			infoContent like '%'||#{keyword}||'%'						
+			)			
+		</if>
+		<if test="searchType == 'tcw'.toString()">
+			and (
+			infoTitle like '%'||#{keyword}||'%'
+			or
+			infoWriter like '%'||#{keyword}||'%'
+			or
+			infoContent like '%'||#{keyword}||'%'						
+			)			
+		</if>
+	</sql>
+	
+	<select id="selectSearchInformationList" resultType="information">
+		select
+		*
+		from
+		Information
+		where infoNum is not null  			  	
+		<include refid="search" />
+		order by infoNum desc
+	</select>
+	<select id="selectSearchInformaionListCount" resultType="int">
+		select
+		count(*)
+		from
+		Information
+		where infoNum is not null  			  	
+		<include refid="search" />
+		order by infoNum desc
+	</select>
+	
+	<update id="insertInformation">
+		insert 
+		into 
+		Information(infoNum,infoTitle,infoWriter,infoContent)
+		values
+		(#{infoNum},#{infoTitle},#{infoWriter},#{infoContent})
+	</update>
+	<select id="selectInformationSeqNext" resultType="int">
+		select Information_seq.nextval as InfoNum from dual
+	</select>
+	
+	
+	<select id="selectInformationByinfoNum"  resultType="information">
+		select * 
+		from Information 
+		where infoNum=#{infoNum}
+	</select>
+	<update id="increaseinformationSearch" parameterType="int">
+		update 
+		Information 
+		set 
+		infoSearch=infoSearch+1 
+		where infoNum=#{infoNum}
+	</update>
+	
+	
+	
+	<update id="updateInformation" parameterType="information">
+		update 
+		Information
+		set 
+		infoTitle=#{infoTitle}, infoContent=#{infoContent}, infoDate=sysdate 
+		where infoNum=#{infoNum}
+	</update>
+	
+	<update id="deleteInformation" parameterType="int">
+		delete 
+		from Information 
+		where infoNum=#{infoNum}
+	</update>
+	
+</mapper>
+
+
+
+
+
+
+

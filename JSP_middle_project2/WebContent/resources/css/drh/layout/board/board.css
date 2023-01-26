@@ -1,0 +1,978 @@
+@charset "utf-8";
+
+/** 게시판 목록 **/
+.board_btn_area{margin:20px 0 0;text-align:right;}
+.board_btn_area a{display:inline-block;padding:10px 15px 10px 35px;color:#fff;border:1px solid #333;background:#5c5c5c url(/images/hanbatlibrary/contents/bul_list.png) no-repeat 15px 50%;}
+
+/** 게시판-기본목록 **/
+.bd_tbl{display:table;table-layout:fixed;min-width:100%;width:100%;margin:5px 0;border-top:2px solid #3b414d;border-bottom:1px solid #b8b8b8;border-collapse:collapse;border-spacing:0;word-break:break-all}
+.bd_tbl > * > tr > *{padding:10px 8px;color:#5d5d5d;font-size:14px;border:1px solid #b8b8b8;border-bottom-width:0}
+.bd_tbl > * > tr > *[scope]{color:#313131;font-weight:400;text-align:center;background:#fcfcfc}
+.bd_tbl > * > tr > *[scope] .tbl_star{display:inline-block;margin:0 0 0 4px;line-height:20px;color:#f00;vertical-align:middle}
+.bd_tbl > * > tr > *[colspan]{border-right:1px}
+.bd_tbl thead{color:#413d39;border-bottom:1px solid #b8b8b8}
+.bd_tbl > * > tr:first-child > *{border-top:none}
+.bd_tbl > * > tr > *:first-child{border-left:none}
+.bd_tbl > * > tr > *:last-child{border-right:none}
+.bd_tbl > * > tr > td ul{margin:0 !important}
+.bd_tbl > * > tr > td a:hover,.bd_tbl > * > tr > td a:active,.bd_tbl > * > tr > td a:focus{font-weight:500;text-decoration:underline}
+
+/** 게시판-기본상세 **/
+.bd_tbl_view th,.bd_tbl_view td{padding:10px 15px !important;font-size:15px;text-align:left !important}
+.bd_tbl_view th{font-weight:500 !important}
+.bd_tbl_view .bd_view_tit{width:20%}
+.bd_tbl_view .bd_view_cont{width:30%}
+
+/** 게시판 th width **/
+.bd_num{width:7%}
+.bd_num_inquiry{width:8%}
+.bd_file,.bd_num_vote{width:9%}
+.bd_department,.bd_writer,.bd_num_peo,.bd_num_biz{width:10%}
+.bd_date,.bd_process{width:11%}
+.bd_money,.bd_state{width:14%}
+.bd_area,.bd_field{width:14%}
+.bd_graph,.bd_period{width:19%}
+.bd_title{width:34%}
+
+.bd_bk_no01{width:8%}
+.bd_bk_no02{width:15%}
+.bd_bk_no03{width:15%}
+.bd_bk_no04{width:auto}
+.bd_bk_no05{width:13%}
+.bd_bk_no06{width:15%}
+.bd_bk_no07{width:10%}
+
+/** 게시판사용 icon **/
+.icon_file{position:relative;margin:0 auto;text-indent:-9999px}
+.icon_file,.icon_file:after{display:block;width:14px;height:14px; top:0px;}
+.icon_file:after{content:'';position:absolute;background-position-y:-754px}
+
+.icon_secret{position:relative;margin:0 auto;text-indent:-9999px}
+.icon_secret,.icon_secret:after{display:inline-block;width:22px;height:20px;}
+.icon_secret:after{content:'';position:absolute;left:0;background-position:-16px -754px;}
+
+.ico_pro_new{background:#2f92e8;color:#fff;width:60px;display:inline-block}
+.ico_pro_end{background:#969696;color:#fff;width:60px;display:inline-block}
+
+/** 게시판정보 + 검색 style **/
+.bd_top_type01{margin-bottom:15px}
+.bd_top_type01:after,.bd_top_type01 .area_left:after{content:'';display:block;clear:both}
+.bd_top_type01 .area_left,.bd_top_type01 .area_select,.bd_top_type01 .bd_info_page{float:left}
+.bd_top_type01 .bd_sel_search{float:right}
+.area_select input{min-width:42px;line-height:36px;color:#fff;text-align:center;border:0;border-radius:5px;cursor:pointer;background:#828282}
+.area_select .selectbox{display:inline-block;position:relative;left:0;width:163px;height:36px;color:#333;border:1px solid #828282;border-radius:5px;box-sizing:border-box;z-index:1}
+.area_select .selectbox:before{content:'';position:absolute;top:46%;right:10px;width:7px;height:4px;margin-top:-1px;background-position-y:-115px}
+.area_select .selectbox label{position:absolute;top:4px;left:8px;padding:2px;color:#555;font-size:14px;font-weight:normal;letter-spacing:-1px;z-index:-1}
+.area_select .selectbox select{width:100%;height:100%;padding:2px;line-height:normal;border:0;-webkit-appearance:none;-moz-appearance:none;appearance:none;opacity:0;filter:alpha(opacity=0);}
+.bd_sel_search{position:relative;min-width:250px;width:353px;padding:3px 40px 3px 5px;border:1px solid #b8b8b8;border-radius:5px;;box-sizing:border-box}
+.bd_sel_search.type001{min-width:250px;width:400px}
+.bd_sel_search label{left:10px;line-height:28px}
+.bd_sel_search input{border:0;box-sizing:border-box;background-color:transparent}
+.bd_sel_search input[type="text"]{width:100%}
+.bd_sel_search.type001 input[type="text"]{width:80%}
+.bd_sel_search input[type="button"]{position:absolute;top:7px;right:13px;width:21px;height:21px;text-indent:-9999px;cursor:pointer;background-position-y:-652px}
+.bd_info_page{display:inherit;width:345px;margin-top:14px;color:#333;font-size:14px}
+.bd_info_page span,.bd_info_page em{color:#1d8b00}
+.bd_info_page strong{display:inline-block;position:relative;font-weight:normal}
+.bd_info_page strong:before{content:'';display:inline-block;width:1px;height:13px;margin:-2px 10px 0;vertical-align:middle;background:#333;}
+
+/** 게시판-자주묻는질문 **/
+.bd_faq li{margin-top:6px;padding:0 37px;border:1px solid #b8b8b8;}
+.bd_faq li:first-child{margin-top:0}
+.bd_faq li .tit{display:block;position:relative;padding:15px 80px 15px 25px;color:#313131;font-size:15px}
+.bd_faq .tit:before,.bd_faq .tit:after,.bd_faq .answer:before{display:block;position:absolute;}
+.bd_faq .tit:before,.bd_faq .answer:before{content:"Q.";top:13px;left:0;color:#0e9214;font-size:16px}
+.bd_faq .tit:after{content:"";top:50%;right:10px;width:21px;height:11px;margin-top:-5px;background-position:-9px -739px;-webkit-transform:rotate(0);transform:rotate(0);-webkit-transition:all .3s ease-in-out;transition:all .3s ease-in-out}
+.bd_faq .tit.open:after{-webkit-transform:rotate(180deg);transform:rotate(180deg)}
+.bd_faq .answer{display:none;position:relative;padding:17px 50px 17px 25px;line-height:22px;font-size:15px;border-top:1px solid #d8d8d8}
+.bd_faq .answer:before{content:"A.";color:#cd6f00}
+
+/** board pagination **/
+.bd_pagination{margin-top:50px;text-align:center}
+.bd_pagination strong,.bd_pagination a{display:inline-block;min-width:35px;margin:3px 2px;line-height:35px;text-align:center;border:1px solid #d0d0d0}
+.bd_pagination a{color:#8b8b8b}
+.bd_pagination a:hover,.bd_pagination a:active,.bd_pagination a:focus{text-decoration:underline}
+.bd_pagination strong{color:#fff;font-weight:500;border-color:#2f343e;background:#2f343e}
+.bd_pagination .direction{position:relative;text-indent:-9999px;background:#f8f8f8}
+.bd_pagination .direction:hover,.bd_pagination .direction:active,.bd_pagination .direction:focus{background:#efefef}
+.bd_pagination .direction:before{content:'';display:block;position:absolute;top:50%;left:50%;width:7px;height:7px;margin:-3px 0 0 -3px;background-position-y:-719px}
+.bd_pagination .direction.prev:before,.bd_pagination .direction.next:before{background-position-y:-730px}
+.bd_pagination .direction.next:before,.bd_pagination .direction.last:before{transform:rotate(180deg)}
+.bd_pagination .direction.first:before,.bd_pagination .direction.last:before{background-position-y:-730px;}
+.bd_pagination .direction.last:before,.bd_pagination a.direction:last-child:before{transform:rotate(180deg)}
+
+/** board button **/
+/** 기본 버튼 **/
+.bd_btn_area{margin:25px 0}
+.bd_btn_area a{color:#303030;}
+.bd_btn_area a:hover,.bd_btn_area a:active,.bd_btn_area a:focus{text-decoration:underline}
+
+.bd_btn_area a,.btn_black,.btn_list,.btn_red,.btn_blue_violet,.btn_blue_green{display:inline-block;position:relative;min-width:156px;margin:1px;padding:0 30px;line-height:51px;font-size:18px;text-align:center;border:1px solid #2d2d2d;box-sizing:border-box}
+.btn_black,.btn_list,.btn_red,.btn_blue_green,.btn_blue_violet{color:#fff !important}
+.btn_black,.btn_list{background:#2d2d2d}
+.btn_red{border-color:#c30000 !important;background:#c30000}
+.btn_blue_violet{border-color:#425aaf !important;background:#425aaf}
+.btn_blue_green{border-color:#0b9991 !important;background:#0b9991}
+
+/** over **/
+.btn_black:hover,.btn_black:active,.btn_black:focus{background:#000}
+.btn_red:hover,.btn_red:active,.btn_red:focus{background:#d90000}
+.btn_blue_violet:hover,.btn_blue_violet:active,.btn_blue_violet:focus{background:#415fc9}
+.btn_blue_green:hover,.btn_blue_green:active,.btn_blue_green:focus{background:#08b8ae}
+
+.bt_icon,.btn_list{text-align:left !important;padding-left:65px !important}
+.bt_icon:before,.btn_list:before{content:'';display:inline-block;position:absolute;top:50%;left:25px;}
+.btn_list:before{width:20px;height:18px;margin-top:-8px;background-position:-357px 0}
+.bt_icon.check:before{width:19px;height:18px;margin-top:-9px;background-position:100% -50px}
+.bt_icon.save:before{width:20px;height:18px;margin-top:-8px;background-position:-308px -30px}
+.bt_icon.pen:before{width:24px;height:22px;margin-top:-11px;background-position:-304px -51px}
+.bt_icon.list:before{width:22px;height:23px;margin-top:-12px;background-position:-280px -51px}
+.bt_icon.out:before{width:19px;height:18px;margin-top:-9px;background-position:100% -70px}
+
+
+/** graph style **/
+.bar_bg{overflow:hidden;display:block;position:relative;border-radius:17px;background:#e4e4e4}
+.bar_bg,.bar_color_red,.bar_color_blue{height:25px;}
+.bar_bg *:last-child{right:0}
+.bar_bg *:first-child{left:0;right:inherit}
+.bar_color_red,.bar_color_blue{position:absolute;top:0;display:inline-block;text-indent:-9999px;background-image:url(/images/hanbatlibrary/common/bg_pattern_graph.png);background-repeat:repeat}
+.bar_color_red{background-color:#ff3000}
+.bar_color_blue{background-color:#2989d2}
+
+/** 게시판-공지사항 목록 **/
+.bd_type01 .bd_title{width:45%}
+
+/** 게시판-목록 type02 **/
+.bd_type02 .bd_title{width:65%}
+
+/** 게시판-목록 type03 **/
+.bd_type03 .bd_title{width:45%}
+
+/** 게시판-공지사항 상세 **/
+.bd_type01_view{border-top:2px solid #3b414d;}
+.bd_type01_view .bd_view_tit{margin:0;padding:18px 12px;line-height:22px;color:#1d1d1d;font-size:20px;text-align:center;background:none;font-weight:400}
+.bd_type01_view .bd_tbl{margin:0;border-top:1px solid #b8b8b8}
+.bd_type01_view .bd_type01_tit{width:14%}
+.bd_type01_view .bd_type01_cont{width:35%}
+.bd_desc{padding:30px 25px 80px;font-size:14px;border-bottom:1px solid #b8b8b8}
+.bd_desc02{padding:20px 25px;font-size:14px;border-bottom:1px solid #b8b8b8}
+.bd_desc02 textarea{width:100%;min-height:250px;resize:none}
+.full_size{width:100%}
+/** 게시판-공지사항 상세 : 글정보 **/
+.bd_view_info{margin:-5px 0 15px;text-align:center}
+.bd_view_info li{display:inline-block;position:relative;min-width:115px;padding:2px 20px 2px 10px;line-height:22px;box-sizing:border-box }
+.bd_view_info li:before{content:'';display:block;position:absolute;top:50%;left:0;width:4px;height:4px;margin-top:-2px;background:#b2b2b2}
+.bd_view_info li span,.bd_view_info li strong{display:inline-block;}
+.bd_view_info li span{margin-right:10px;padding-right:10px}
+.bd_view_info li span:first-child{position:relative}
+.bd_view_info li span:first-child:before{content:'';display:inline-block;position:absolute;top:50%;right:0;width:1px;height:16px;margin-top:-7px;background:#545454}
+.bd_view_info li span.total{margin-right:7px}
+.bd_view_info li span.total:before{transform:rotate(33deg)}
+.bd_view_info li strong{margin-left:5px;padding-right:2px;color:#1d1d1d;font-size:20px}
+
+/** 게시판-설문조사 목록 **/
+.bd_survey .bd_title{width:51%}
+
+/** 게시판-설문조사 상세 **/
+.bd_survey_view_tit{width:17%}
+/** 게시판-설문조사 상세 **/
+.bd_view_survey{padding:15px}
+.bd_view_survey textarea{padding:8px;box-sizing:border-box}
+.bd_view_survey>li{padding-bottom:20px}
+.bd_view_survey>li>strong{display:block;position:relative;padding:15px 15px 15px 40px;font-size:15px;font-weight:500;letter-spacing:-1px;border:1px solid #d5d5d5;background:#f8f8f8}
+.bd_view_survey>li>strong span,.bd_view_survey>li>strong em,.bd_view_survey .lst_check li strong,.bd_view_survey .lst_check li label span{display:inline-block;}
+.bd_view_survey>li>strong span{position:absolute;left:3px;width:30px;text-align:right}
+.bd_view_survey>li>strong em{margin-left:5px;color:#c10000}
+.bd_view_survey .lst_check,.bd_view_survey .lst_txt{padding:15px 0 0 20px}
+.bd_view_survey .lst_check li,.bd_view_survey .lst_check li label{position:relative;}
+.bd_view_survey .lst_check li{padding:1px 0 1px 18px}
+.bd_view_survey .lst_check li strong,.bd_view_survey .lst_check li label span{position:absolute;left:0;}
+.bd_view_survey .lst_check li strong *{margin-top:-2px;vertical-align:middle}
+.bd_view_survey .lst_check li label{display:block;margin-bottom:3px;padding-left:20px}
+.bd_view_survey .lst_check li textarea{margin-top:5px}
+.bd_view_survey .lst_txt{position:relative}
+.bd_view_survey .lst_txt label{top:25px;left:28px}
+/** 게시판-설문조사 상세 - 결과 **/
+.lst_check.result{padding-right:20px}
+.lst_check.result li{position:relative;margin-bottom:2px;padding-right:30%;padding-left:0 !important}
+.lst_check.result li p{position:relative;padding:0 22px}
+.lst_check.result li p span{position:absolute;left:0}
+.lst_check.result li div{position:absolute;top:0;right:0;width:30%;box-sizing:border-box}
+.lst_check.result .bar_bg,.lst_check.result .bar_color_red,.lst_check.result .bar_color_blue{height:19px}
+.lst_check.result .bar_bg{width:50%;margin:1px 0}
+.lst_check.result li div strong{top:0;left:55%;font-weight:500}
+.lst_check.result li div strong em,.lst_check.result li div strong span{display:inline-block;text-align:right}
+.lst_check.result li div strong em{position:relative;width:60px;margin-right:5px;padding-right:10px}
+.lst_check.result li div strong em:after{content:'';display:block;position:absolute;top:5px;right:0;width:1px;height:14px;transform:rotate(32deg);background:#545454}
+.lst_check.result li div strong span{min-width:30px}
+
+/** 문화행사-calendar **/
+.calendar_tbl{display:table;table-layout:fixed;min-width:100%;width:100%;margin:5px 0;border-top:1px solid #dadada;border-bottom:1px solid #dadada;border-collapse:collapse;border-spacing:0;word-break:break-all}
+.calendar_tbl > * > tr > *{padding:10px 8px;color:#777;border:1px solid #dadada;border-bottom-width:0}
+.calendar_tbl > * > tr > *[scope]{color:#fff;font-weight:500;text-align:center;background:#989898}
+.calendar_tbl > * > tr > *[colspan]{border-right:1px}
+.calendar_tbl thead{color:#413d39;border-bottom:1px solid #dadada}
+.calendar_tbl tbody > tr > *[scope]{background:#fcfcf4}
+.calendar_tbl tbody > tr > td{position:relative;height:98px;padding-top:35px;vertical-align:top;box-sizing:border-box}
+.calendar_tbl tbody > tr > td em{position:absolute;top:10px;left:10px}
+.calendar_tbl > * > tr:first-child > *{border-top:none}
+.calendar_tbl a:hover,.calendar_tbl a:active,.calendar_tbl a:focus{text-decoration:underline}
+.calendar_tbl a{overflow:hidden;display:inline-block;position:relative;min-width:26px;max-width:100%;height:21px;padding-left:22px;text-overflow:ellipsis;white-space:nowrap;box-sizing:border-box}
+.calendar_tbl a span{position:absolute;left:0}
+
+	.box_calendar{margin:0 0 30px;padding:11px;background:url(/images/hanbatlibrary/common/bg_box_ling01.gif) repeat 0 0}
+	.box_calendar>div{padding:35px 40px;background:#fff}
+
+	.bul_cal,.bul_cal:before{display:inline-block}
+	.bul_cal{position:relative;vertical-align:top}
+	.bul_cal i{position:absolute;text-indent:-9999px}
+	.bul_cal:before{content:'';position:absolute;top:3px;left:0;width:16px;height:16px;background-position-y:-238px}
+	.icon_01:before{background-position-x:-360px}
+	.icon_02:before{background-position-x:-377px}
+	.icon_03:before{background-position-x:-394px}
+	.icon_04:before{background-position-x:-411px}
+	.icon_05:before{background-position-x:100%}
+	.icon_06:before{background-position-x:-343px}
+
+	.bul_tip{margin-top:20px}
+	.bul_tip span{margin-right:20px;padding-left:22px}
+
+	/** 일정 **/
+	.box_calendar_area{overflow:hidden;padding:35px 40px}
+	.box_calendar_area .calendar_area{padding:0}
+	.box_calendar_area .calendar_area{float:left;width:57%}
+	.box_calendar_area .calendar_lst{float:right;width:38%}
+	
+	.box_calendar_area .area_condition{margin-bottom:10px}
+	.box_calendar_area .area_condition .date{overflow:visible;float:none;height:42px}
+	.box_calendar_area .area_condition .date p:first-child{float:none;position:relative;margin-right:0;text-align:center}
+	.box_calendar_area .area_condition .date p a{position:absolute;right:0}
+	.box_calendar_area .area_condition .date p a:first-child{left:0;right:inherit}
+	.box_calendar_area .calendar_tbl tbody > tr > td{height:67px}
+	.box_calendar_area .calendar_tbl a{float:left;min-width:18px;max-width:18px;padding-left:18px}
+	.box_calendar_area .bul_tip span{margin-right:15px;font-size:13px}
+
+	.calendar_lst h4{margin:0 0 25px;padding:0 0 10px;line-height:42px;color:#333;font-size:22px;font-weight:400;border-bottom:1px solid #dadada;background:none}
+	.calendar_lst h4 span{margin-left:5px;color:#00936c;letter-spacing:-1px}
+	.calendar_lst ul{padding:0 5px}
+	.calendar_lst li{margin-bottom:5px}
+
+	.ico_bul{overflow:hidden;display:inline-block;position:relative;max-width:100%;padding-left:25px;text-overflow:ellipsis;white-space:nowrap;box-sizing:border-box}
+	.ico_bul:hover,.ico_bul:active,.ico_bul:focus{text-decoration:underline}
+	.ico_bul .bul_cal{position:absolute;left:0}
+
+	/** 상세화면 **/
+	.cal_view{}
+	.cal_view h4{font-size:22px;margin:0;padding:0;background:none;font-weight:400;color:#333333;line-height:28px;border-bottom:1px solid #dadada;padding:0 0 15px 0px;margin:0 0 20px 0}
+	.cal_view ul{display:inline-block;width:100%;padding:0;margin:0}
+	.cal_view li strong{font-size:15px; color:#068362;padding:0 20px 0 0;font-weight:400}
+	.cal_view li{font-size:15px;}
+    .view_cont{padding:0 0 30px 0;border-bottom:1px solid #dadada}
+
+	.cal_view02{display:inline-block;width:100%;box-sizing:border-box}
+	.cal_view02 .bk_img{width:30%;float:left;}
+	.cal_view02 .bk_img p{position:relative;background:#f0f0f0;width:150px;height:200px;background:url(/images/hanbatlibrary/common/no_img.gif) no-repeat 50% 50%}
+	.cal_view02 .bk_img img{width:150px;height:200px;}
+	.cal_view02 .bk_info{width:70%;float:right}
+	.cal_view02 h4{font-size:22px;margin:0;padding:0;background:none;font-weight:400;color:#333333;line-height:28px;border-bottom:1px solid #dadada;padding:0 0 15px 0px;margin:0 0 20px 0}
+	.cal_view02 ul{display:inline-block;width:100%;padding:0;margin:0}
+	.cal_view02 li strong{color:#068362;font-weight:400;float:left;display:inline-block;width:23%}
+	.cal_view02 li span{display:inline-block;width:77%;line-height:20px}
+	.cal_view02 li{font-size:14px;line-height:22px}
+
+	.bk_recom{box-sizing:border-box;padding:20px 30px;border:1px solid #ededed;margin:30px 0 0 0}
+	.bk_recom strong{font-size:16px;margin:0 0 10px 0;display:block;color:#000 }
+
+	
+	
+
+
+.area_condition{overflow:hidden;margin-bottom:19px}
+.area_condition .selectbox{float:left;height:40px}
+.area_condition .selectbox label{top:6px}
+.area_condition .date{float:right}
+.area_condition .date:after{content:'';display:block;clear:both}
+.area_condition .date p{float:left}
+.area_condition .date p:first-child{margin-right:40px}
+.area_condition .date p a,.area_condition .date p strong{display:inline-block;vertical-align:top}
+.area_condition .date p strong{padding:10px 15px 0;color:#333;font-size:22px;font-weight:400}
+.area_condition .date p a{position:relative;width:40px;height:40px;text-indent:-9999px;border-radius:50%;background:#d6d6d6}
+.area_condition .date p a:before{content:'';display:block;position:absolute;top:50%;left:50%;width:12px;height:16px;margin:-8px 0 0 -6px;background-position:-354px -23px}
+.area_condition .date p a.next:before{transform:rotate(180deg)}
+.area_condition .date p a:hover{background:#bbb}
+
+/** paging **/
+.paging{width:100%;margin:20px auto 0 0;padding:0;color:#ccc;font-size:13px;}
+.pagination{width:auto;font-size:13px;text-align:center;}
+.pagination *{display:inline;margin:0 0 5px;padding:1px 2px;line-height:normal;color:#333;vertical-align:middle;text-decoration:none;}
+.pagination strong,.pagination a,.pagination a.first,.pagination a.last{display:inline-block;}
+.pagination strong,.pagination a{width:auto;margin:5px 3px 5px 0;padding:8px;font-weight:500;border:1px solid #d0d0d0}
+.pagination strong{color:#fff;border-color:#0e9f74;background:#0e9f74;}
+.pagination a{color:#878787;}
+.pagination a:hover,.pagination a:active,.pagination a:focus{text-decoration:underline;}
+.pagination .direction{border:1px solid #bcbcbc;margin:0 2px;background:#f8f8f8;}
+.pagination .direction:hover,.pagination .direction:active,.pagination .direction:focus{background:#efefec;}
+
+.selectbox{display:inline-block;position:relative;left:0;width:145px;height:36px;color:#333;border:1px solid #b8b8b8;box-sizing:border-box;z-index:1}
+.selectbox:before{content:'';position:absolute;top:50%;right:10px;margin-top:-3px;border:6px solid transparent;border-top-color:#444}
+.selectbox label{position:absolute;top:4px;left:7px;padding:2px;color:#555;font-size:14px;font-weight:normal;letter-spacing:-1px;z-index:-1}
+.selectbox select{width:100%;height:100%;padding:7px;line-height:normal;box-sizing:border-box;border:0;-webkit-appearance:none;-moz-appearance:none;appearance:none;filter:alpha(opacity=0);color: #262626;font-size: 16px;background:#fff}
+
+
+
+
+/** 자료검색 **/
+.s_search{overflow:hidden;position:relative;width:608px;margin:20px auto 50px;padding:17px 70px 17px 25px;box-sizing:border-box;background:#fff;border:1px solid #e0e0e0}
+.s_search>div{float:left}
+.s_search .selectbox,.s_search input{border-width:0}
+.s_search label{font-size:18px}
+.s_search .selectbox label{color:#262626;font-size:16px}
+.s_search .selectbox select{border-width:0}
+.s_search .wordbox{position:relative;width:320px;height:36px;margin-left:15px;padding-left:25px;line-height:36px;border-left:1px solid #d7d7d7}
+.s_search .wordbox label{left:35px}
+.s_search .wordbox input{width:100%;height:100%;box-sizing:border-box;}
+.s_search a,.s_search a:before{display:block;position:absolute}
+.s_search a{top:0;right:0;width:70px;height:100%;text-indent:-9999px;background-color:#ed5824;}
+.s_search a:before{content:'';top:50%;left:50%;width:32px;height:32px;margin:-16px 0 0 -16px;background-position-x:100%}
+.s_search a:hover,.s_search a:active,.s_search a:focus{background-color:#01a479}
+
+.s_search_cont{width:80%;margin:0 auto}
+.s_search_cont .h6_ul{margin:0}
+
+
+/** 새로들어온책 등 **/
+.book_search{width:100%;display:inline-block;box-sizing: border-box;padding-bottom:20px;text-align:center;border-bottom:1px solid #d9d9d9;font-size:18px;margin:0;line-height:24px}
+.book_search strong{background:url(/images/hanbatlibrary/contents/bul_h4.jpg) no-repeat 0 7px;font-weight:400;padding:0 0 0 26px}
+
+.book_list{width:100%;display:inline-block;box-sizing: border-box;}
+.book_list li a{border-bottom:1px solid #dadada;width:100%;display:inline-block;box-sizing: border-box;padding:30px 0}
+.book_list li a .book_img{float:left;width:105px;height:140px;background:#f0f0f0;position:relative;}
+.book_list li a .book_img img{width:105px;height:140px;}
+.book_list li a .book_img.no_img i{display: block;position: relative;height: 100%;text-indent: -9999px;background: #f7f7f7;z-index: 1;}
+.book_list li a .book_img.no_img i:before{content:'';position:absolute;top:50%;left:50%;width:68px;height:48px;margin:-24px 0 0 -34px;text-indent: -9999px;background-position-y:0}
+.book_list li a .book_info{float:right;width:82%}
+.book_list li a .book_info h4{color:#333333;background:none;padding:0;margin:0 0 20px 0;line-height:24px}
+.book_list li a .book_info li{line-height:25px;background:url(/images/hanbatlibrary/contents/bul_dot.gif) no-repeat 0 11px;padding:0 0 0 10px}
+.book_list li a .book_info li strong{color:#068362;width:70px;display:inline-block}
+
+
+/** 포토갤러리 목록 **/
+.photo_list {border-bottom:1px solid #e0e0e0;display:inline-block;box-sizing:border-box;width:100%;padding:15px 0}
+.photo_list ul li {float:left;text-align:center;margin:0px 1% 10px; width:22.7%; padding-bottom:15px; border:1px solid #ccc;}
+.photo_list ul li a {display:inline-block;width:100%;box-sizing:border-box; padding:10px}
+.photo_list ul li img {width:auto; max-width:100%; height:140px;}
+.photo_list .pt_txt {padding-top:10px; white-space: nowrap;text-overflow: ellipsis;overflow: hidden; border-top:1px solid #ccc}
+.photo_list .pt_date {font-size:12px;}
+
+/** 포토갤러리 상세 **/
+
+
+/** 20201110 독서이벤트 추가 **/
+.bk_thum {display:inline-block;box-sizing:border-box;width:100%;padding:15px 0}
+.bk_thum ul li {margin-bottom:22px;}
+.bk_thum ul li a{position:relative;min-height:207px;padding:0 40px 0 310px;border:1px solid #b8b8b8;box-sizing:border-box;display:block; border-radius:8px}
+.bk_thum ul li a:hover,.bk_thum ul li a:active,.bk_thum ul li a:focus{border-color:#000;}
+.bk_thum_img{display:block; position:absolute; left:0; overflow:hidden;}
+.bk_thum_img img{display:block; border-top-left-radius:6px; border-bottom-left-radius:6px; width:268px; height:205px;}
+.bk_thum_tit,.bk_thum_cont,.bk_thum_name{display:block; overflow:hidden;}
+.bk_thum_tit{color:#212121; font-size:24px; padding:30px 0 10px 0; text-overflow:ellipsis; white-space:nowrap; font-weight:500;}
+.bk_thum_name{font-size:20px; color:#212121; padding-bottom:22px;}
+.bk_thum_cont{height:48px; line-height:22px; font-size:15px; padding-top:22px; border-top:1px solid #e3e3e3}
+
+
+
+/** 1600px 시작 **/
+@media screen and (max-width:1600px){
+}
+/** 1600px 끝 **/
+
+/** 1400px 시작 **/
+@media screen and (max-width:1400px){
+}
+/** 1400px 끝 **/
+
+/** 1280px 시작 **/
+@media screen and (max-width:1280px){
+}
+/** 1280px 끝 **/
+
+/** 1024px 시작 **/
+@media screen and (max-width:1024px){
+
+	/** 게시판-설문조사 목록 **/
+	.bd_survey .bd_title{width:40%}
+	.bd_survey .bd_period{width:21%}
+	.bd_survey .bd_state{width:16%}
+
+	/** 게시판-설문조사 상세 - 결과 **/
+	.lst_check.result li{padding-right:40%;}
+	.lst_check.result li div{width:35%}
+
+	/** 문화행사 **/
+	.box_calendar>div{padding-right:30px;padding-left:30px}
+	.calendar_tbl a{font-size:13px;letter-spacing:-1px}
+		/** 일정 **/
+		.box_calendar_area{padding-right:30px;padding-left:30px}
+		.box_calendar_area .calendar_area{width:60%}
+		.box_calendar_area .calendar_lst{width:35%}
+
+	/** 새로들어온책 등 **/
+	.book_list li a .book_info{width:80%}
+
+	/** 게시판 th width **/
+	.bd_bk_no07{width:12%}
+	
+}
+/** 1024px 끝 **/
+
+/** 1023px 시작 **/
+@media screen and (max-width:1023px){
+
+	/** 게시판-설문조사 목록 **/
+	.bd_survey .bd_title{width:52%}
+
+	/** 문화행사 **/
+	.box_calendar>div{padding-right:40px;padding-left:40px}
+	.calendar_tbl a{font-size:14px;}
+		/** 일정 **/
+		.box_calendar_area{padding-right:40px;padding-left:40px}
+		.box_calendar_area .calendar_area{width:58%}
+		.box_calendar_area .calendar_lst{width:37%}
+}
+/** 1023px 끝 **/
+
+/** 1000px 시작 **/
+@media screen and (max-width:1000px){
+
+	/** 게시판-설문조사 상세 - 결과 **/
+	.lst_check.result li{padding-right:45%;}
+	.lst_check.result li div{width:40%}
+
+}
+/** 1000px 끝 **/
+
+/** 900px 시작 **/
+@media screen and (max-width:900px){
+
+	/** 게시판정보 + 검색 style **/
+	.bd_top_type01{margin-bottom:15px}
+	.bd_top_type01 .area_left{float:none}
+	.bd_top_type01 .area_select{float:right;margin-top:-15px}
+	.bd_top_type01 .bd_sel_search{float:none;width:100%;margin:10px 0;background:#fff}
+	.bd_sel_search:before{content:'';display:block;position:absolute;top:-6px;left:0;height:1px;background:#f4f4f4}
+	.bd_info_page{width:auto;margin-top:0}
+
+	/** 게시판-설문조사 상세 - 결과 **/
+	.lst_check.result{padding-right:10px}
+
+	/** 문화행사 **/
+	.box_calendar>div{padding-right:30px;padding-left:30px}
+	.calendar_tbl a{font-size:13px;}
+		/** 일정 **/
+		.box_calendar_area{padding-right:30px;padding-left:30px}
+		.box_calendar_area .calendar_area{width:60%}
+		.box_calendar_area .calendar_lst{width:36%}
+
+
+	/** 자료검색 **/
+	.s_search label,.s_shortcut li a{font-size:16px}
+
+}
+/** 900px 끝 **/
+
+/** 800px 시작 **/
+@media screen and (max-width:800px){
+
+	/** 게시판-공지사항 목록 **/
+	.bd_type01 .bd_num{width:9%}
+	.bd_type01 .bd_file{width:10.5%}
+	.bd_type01 .bd_department,.bd_type01 .bd_date{width:14%}
+
+	/** 게시판-목록 type03 **/
+	.bd_type03 .bd_file{width:10%}
+	.bd_type03 .bd_department,.bd_type03 .bd_date,.bd_type03 .bd_process{width:14%}
+
+	/** 게시판-설문조사 목록 **/
+	.bd_survey .bd_num{width:8%}
+	.bd_survey .bd_title{width:41%}
+
+	/** 게시판-설문조사 상세 - 결과 **/
+	.lst_check.result li{padding-right:45%;}
+	.lst_check.result li div{width:45%}
+
+	/** 자료검색 **/
+	.s_search{width:80%;padding:10px 0}
+	.s_search .wordbox{width:calc(100% - 200px)}
+
+	/** 게시판 th width **/
+	.bd_bk_no07{display:none}
+	.bd_collection th:nth-child(7),.bd_collection td:nth-child(7){display:none}
+	.bd_collection th:nth-child(6),.bd_collection td:nth-child(6){border-right:0}
+
+}
+/** 800px 끝 **/
+
+/** 768px 시작 **/
+@media screen and (max-width:768px){
+		/** 일정 **/
+		.box_calendar_area{padding-right:30px;padding-left:30px}
+		.box_calendar_area .calendar_area,.box_calendar_area .calendar_lst{float:none;width:100%}
+		.box_calendar_area .calendar_area{margin-bottom:15px;padding-bottom:20px;border-bottom:1px dotted #ddd}
+
+	/** 게시판-공지사항 상세 **/	
+	.bd_type01_view .bd_view_tit{text-align:left}
+	.bd_desc{padding:20px 15px 40px}
+	/** 게시판-공지사항 상세 : 글정보 **/
+	.bd_view_info{margin-bottom:10px;padding-top:8px;padding-left:14px;text-align:left;border-top:1px dotted #d8d8d8}
+
+	/** 게시판-설문조사 목록 **/
+	.bd_survey .bd_title{width:37%}
+	.bd_survey .bd_period{width:23%}
+	.bd_survey .bd_state{width:17%}
+
+	/** 게시판-설문조사 상세 **/
+	.bd_view_survey{padding-right:0;padding-left:0;}
+	.bd_view_survey .lst_txt{padding-left:0}
+
+	/** 게시판-설문조사 상세 - 결과 **/
+	.lst_check.result{padding-right:0}
+	.lst_check.result li div strong{left:52%}
+
+	
+}
+/** 768px 끝 **/
+
+/** 736px 시작 **/
+@media screen and (max-width:736px){
+
+	.photo_list ul li {width:30%}
+
+
+	.bk_thum_img img {width:215px; height:165px}
+	.bk_thum ul li a {min-height:167px; padding:0 35px 0 250px}
+	.bk_thum_tit {font-size:22px; padding:20px 0 10px 0}
+	.bk_thum_name {font-size:18px; padding-bottom:16px}
+	.bk_thum_cont {padding-top:16px; height:42px; line-height:20px; font-size:14px;}
+
+}
+/** 736px 끝 **/
+
+/** 667px 시작 **/
+@media screen and (max-width:667px){
+
+	/** 문화행사 **/
+	.calendar_area.full .area_condition{margin-bottom:10px}
+	.calendar_area.full .area_condition .selectbox,.area_condition .date,.area_condition .date p{float:none}
+	.calendar_area.full .area_condition .selectbox{width:100%}
+	.calendar_area.full .area_condition .date{margin-top:10px;padding-top:10px;text-align:center;border-top:1px dotted #bbb}
+	.calendar_area.full .area_condition .date p{display:inline-block}
+
+	.calendar_area.full{padding:20px}
+	.calendar_area.full .calendar_tbl,.calendar_area.full .calendar_tbl tbody,.calendar_area.full .calendar_tbl tr,.calendar_area.full .calendar_tbl td{display:block;box-sizing:border-box}
+	.calendar_area.full .calendar_tbl thead tr{display: none;}
+	.calendar_area.full .calendar_tbl tbody,.calendar_area.full .calendar_tbl tr{width:100%}
+	.calendar_area.full .calendar_tbl tr {position:relative;padding: 7px 0;border-top:1px solid #b8b8b8}
+	.calendar_area.full .calendar_tbl tr:first-child{border-top-width:0}
+
+	.calendar_area.full .calendar_tbl td{clear:both;position:relative;padding:8px 20px 8px 70px;text-align:left;border-width:0;border-top:1px dotted #b8b8b8}
+	.calendar_area.full .calendar_tbl tr td:first-child{border-top-width:0}
+	.calendar_area.full .calendar_tbl td:before {content:'';display:block;position:absolute;left:12px;color:#313131;}
+	.calendar_area.full .calendar_tbl td:nth-child(1):before {content: '일';}
+	.calendar_area.full .calendar_tbl td:nth-child(2):before {content: '월';}
+	.calendar_area.full .calendar_tbl td:nth-child(3):before {content: '화';}
+	.calendar_area.full .calendar_tbl td:nth-child(4):before {content: '수';}
+	.calendar_area.full .calendar_tbl td:nth-child(5):before {content: '목';}
+	.calendar_area.full .calendar_tbl td:nth-child(6):before {content: '금';}
+	.calendar_area.full .calendar_tbl td:nth-child(7):before {content: '토';}
+
+	.calendar_area.full .calendar_tbl tbody > tr > td{min-height:40px;height:auto}
+	.calendar_area.full .calendar_tbl tbody > tr > td em{top:7px;left:35px;width:26px;height:26px;line-height:26px;font-size:13px;text-align:center;border-radius:50%;background:#ebebeb}
+	.calendar_area.full .calendar_tbl tbody > tr > td a{display:block}
+
+		/** 일정 **/
+		.box_calendar .box_calendar_area{padding:20px 25px}
+
+	/** 모바일 row-style **/
+	.mob_row,
+	.mob_row thead,
+	.mob_row tbody,
+	.mob_row tr{overflow:hidden;display:block}/* 테이블의 모든 요소를 block화 시킴*/
+	.mob_row th,
+	.mob_row td{display:inline-block}
+	.mob_row{border-top:1px solid #000}
+	.mob_row tr:after {content:"";display:block;clear:both}/* th,td의 플롯해제 */
+	.mob_row th,.mob_row td{position:relative;float:left;border-right:0;box-sizing:border-box}
+	.mob_row th{width:30%;border-left-width:0}/* ie9에서 float을 줘야함 */
+	.mob_row td{width:70%;}/* relative를 줘야 사파리에서 다시 키웠을때, 안깨짐*/
+
+	/** 게시판-공지사항 목록 **/
+	
+
+	/** 게시판-목록 type02 **/
+	.bd_type02 .bd_title{width:42%}
+	.bd_type02 .bd_file{width:10%}
+	.bd_type02 .bd_date{width:13%}
+	
+
+	/** 게시판-공지사항 상세 **/	
+	.bd_type01_view .bd_tbl.mob_row > * > tr:first-child > *{border-top:1px solid #b8b8b8}
+	.bd_type01_view .bd_tbl.mob_row > * > tr:first-child > th:first-child,.bd_type01_view .bd_tbl.mob_row > * > tr:first-child >th:first-child+td{border-top-color:transparent}
+
+	.bd_type01_view .mob_row th{width:23%}
+	.bd_type01_view .mob_row td{width:77%}
+
+	/** 게시판-설문조사 목록 **/
+	.bd_survey .bd_title{width:37%}
+	.bd_survey .bd_num_peo,
+	.bd_survey th:nth-child(4),.bd_survey td:nth-child(4){display:none}
+
+	/** 게시판-설문조사 상세 - 결과 **/
+	.lst_check.result li{padding-right:0;}
+	.lst_check.result li div{position:relative;width:100%;right:inherit;padding:5px 24px 10px}
+	.lst_check.result li div strong{top:3px}
+
+	/** 자료검색 **/
+	.s_search{width:100%;}
+	.s_search_cont{width:100%}
+
+	/** 새로들어온책 등 **/
+	.book_list li a .book_info{width:74%}
+
+
+	/** 상세화면 **/
+	.cal_view02 .bk_img{width:40%;}
+	.cal_view02 .bk_info{width:60%;}
+
+}
+/** 667px 끝 **/
+
+/** 640px 시작 **/
+@media screen and (max-width:640px){	
+	/** 게시판 목록 */
+	.table_type01 .file,.table_type01 .count{display:none;}
+	.table_spot .page_num,.table_spot .table_search{float:none;}
+	.table_spot .page_num{margin-bottom:10px;}
+
+	
+	/** 게시판-공지사항 목록 **/
+	.bd_type01 .bd_title{width:38%}
+
+	.bd_type01 .bd_file,
+	.bd_type01 th:nth-child(4),.bd_type01 td:nth-child(4){display:none}
+
+	.bd_type01 .bd_num_inquiry,
+	.bd_type01 th:nth-child(6),.bd_type01 td:nth-child(6){display:none;}
+
+	.bd_type01 th:nth-child(5),.bd_type01 td:nth-child(5){border-right:0;}
+
+	/** 게시판-목록 type03 **/
+	.bd_type03 .bd_title{width:38%}
+
+	.bd_type03 .bd_file,
+	.bd_type03 th:nth-child(4),.bd_type03 td:nth-child(4){display:none}
+
+	.bd_type03 .bd_date,
+	.bd_type03 th:nth-child(5),.bd_type03 td:nth-child(5){display:none}
+
+	/** 게시판-설문조사 목록 **/
+	.bd_survey .bd_title{width:34%}
+
+}
+/** 640px 끝 **/
+
+/** 600px 시작 **/
+@media screen and (max-width:600px){
+
+	/** 게시판-설문조사 목록 **/
+	.bd_survey .bd_num{width:10%}
+	.bd_survey .bd_title{width:68%}
+	.bd_survey .bd_state{width:24%}
+	.bd_survey .bd_period,
+	.bd_survey th:nth-child(3),.bd_survey td:nth-child(3){display:none}
+
+	/** 자료검색 **/
+	.s_search{width:96%;padding-left:10px}
+	.s_search .wordbox{width:calc(100% - 180px);padding-left:10px}
+	.s_search .wordbox label{left:25px}
+
+	/** 새로들어온책 등 **/
+	.book_list li a .book_info{width:70%}
+
+	.bk_thum ul li a {min-height:122px; padding:0 25px 0 175px;}
+	.bk_thum_img img {width:150px; height:120px;}
+	.bk_thum_name {padding-bottom:8px}
+	.bk_thum_cont {padding-top:0; border:0; height:22px}
+
+}
+/** 600px 끝 **/
+
+/** 568px 시작 **/
+@media screen and (max-width:568px){
+	/** 문화행사 **/
+	.calendar_area.full .area_condition .date p:first-child{margin-right:20px}
+
+	
+
+	/** 게시판-목록 type02 **/
+	.bd_type02 .bd_title{width:38%}
+	.bd_type02 .bd_file{width:12%}
+	.bd_type02 .bd_date,
+	.bd_type02 th:nth-child(4),.bd_type02 td:nth-child(4){display:none}
+
+	/** 게시판-설문조사 목록 **/
+	.bd_survey .bd_title{width:66%}
+	.bd_survey .bd_state{width:25%}
+
+	/** 자료검색 **/
+	.s_search{width:100%;padding-right:60px}
+	.s_search a{width:55px}
+	.s_search .wordbox{width:calc(100% - 175px)}
+	.s_search .wordbox label{left:20px}
+
+	.photo_list ul li {width:47%}
+
+	.photo_bbox img{width:100%; max-width:685px;}
+	
+}
+/** 568px 끝 **/
+
+/** 480px 시작 **/
+@media screen and (max-width:480px){
+
+	/** 게시판정보 + 검색 style **/
+	.bd_top_type01 .area_select,.bd_top_type01 .bd_info_page{float:none;width:100%}
+	.bd_top_type01 .bd_info_page{margin:0 0 5px}
+	.bd_top_type01 .area_select{position:relative;margin-top:0;padding-right:50px;box-sizing:border-box}
+	.bd_top_type01 .bd_sel_search{margin-top:8px;margin-bottom:0}
+	.area_select .selectbox{width:100%}
+	.area_select input{position:absolute;top:0;right:0}
+
+	/** 게시판-버튼 **/
+	.bd_btn_area a:before{display:none}
+	.bd_btn_area a{min-width:32%;padding-left:20px !important}
+
+	
+	/** 게시판-공지사항 상세 **/	
+	.bd_type01_view .mob_row th{width:25%}
+	.bd_type01_view .mob_row td{width:75%}
+	.bd_desc{padding:15px 15px 25px}
+
+	/** 게시판-설문조사 목록 **/
+	.bd_survey .bd_num{width:13%}
+	.bd_survey .bd_title{width:63%}
+	.bd_survey .bd_state{width:24%}
+	.bd_survey .btn_st.small{font-size:13px;letter-spacing:-1px;padding:0 10px}
+
+	/** 게시판-설문조사 상세 **/
+	.bd_survey_view_tit{width:24%}
+	.bd_view_survey .lst_check{padding-left:15px}
+	.bd_view_survey .lst_txt{padding-left:0}
+	.bd_view_survey .lst_txt label{left:9px}
+
+	/** 게시판 목록 */
+	.table_spot .table_search select{width:100%;height:inherit;margin:0 0 6px;padding:4px 0;}
+	.table_spot .table_search .search_input{width:100%;margin-right:-28px;}
+
+	/** 게시판-자주묻는질문 **/
+	.bd_faq li{padding:0 15px}
+	.bd_faq li .tit,.bd_faq .answer{padding:15px 15px 15px 25px}
+	.bd_faq .tit:before,.bd_faq .answer:before{top:13px}
+	.bd_faq .tit:after{display:none}
+
+	/** 문화행사 **/
+	.calendar_area.full .area_condition .date p{display:block}
+	.calendar_area.full .area_condition .date p:first-child{margin:0 0 10px}
+	.calendar_area.full .area_condition .date p strong{width:70px}
+
+		/** 일정 **/	
+		.box_calendar_area .calendar_area .calendar_tbl,.box_calendar_area .calendar_area .calendar_tbl tbody,.box_calendar_area .calendar_area .calendar_tbl tr,.box_calendar_area .calendar_area .calendar_tbl td{display:block;box-sizing:border-box}
+		.box_calendar_area .calendar_area .calendar_tbl thead tr{display: none;}
+		.box_calendar_area .calendar_area .calendar_tbl tbody,.box_calendar_area .calendar_area .calendar_tbl tr{width:100%}
+		.box_calendar_area .calendar_area .calendar_tbl tr {position:relative;padding: 7px 0;border-top:1px solid #b8b8b8}
+		.box_calendar_area .calendar_area .calendar_tbl tr:first-child{border-top-width:0}
+
+		.box_calendar_area .calendar_area .calendar_tbl td{clear:both;position:relative;padding:8px 20px 8px 70px;text-align:left;border-width:0;border-top:1px dotted #b8b8b8}
+		.box_calendar_area .calendar_area .calendar_tbl tr td:first-child{border-top-width:0}
+		.box_calendar_area .calendar_area .calendar_tbl td:before {content:'';display:block;position:absolute;left:12px;color:#313131;}
+		.box_calendar_area .calendar_area .calendar_tbl td:nth-child(1):before {content: '일';}
+		.box_calendar_area .calendar_area .calendar_tbl td:nth-child(2):before {content: '월';}
+		.box_calendar_area .calendar_area .calendar_tbl td:nth-child(3):before {content: '화';}
+		.box_calendar_area .calendar_area .calendar_tbl td:nth-child(4):before {content: '수';}
+		.box_calendar_area .calendar_area .calendar_tbl td:nth-child(5):before {content: '목';}
+		.box_calendar_area .calendar_area .calendar_tbl td:nth-child(6):before {content: '금';}
+		.box_calendar_area .calendar_area .calendar_tbl td:nth-child(7):before {content: '토';}		
+
+		.box_calendar_area .calendar_tbl tbody > tr > td{min-height:40px;height:auto}
+		.box_calendar_area .calendar_tbl tbody > tr > td em{top:7px;left:35px;width:26px;height:26px;line-height:26px;font-size:13px;text-align:center;border-radius:50%;background:#ebebeb}
+		.box_calendar_area .calendar_tbl tbody > tr > td a{display:block}
+
+		/** 상세화면 **/
+		.cal_view li strong{padding:0;display:block}
+
+		.cal_view02 .bk_img{width:100%;margin:0 0 30px 0}
+		.cal_view02 .bk_img p{margin:0 auto}
+		.cal_view02 .bk_info{width:100%;float:right}
+		.cal_view02 li strong{width:100%}
+		.cal_view02 li span{width:100%;}
+
+		/** 새로들어온책 등 **/
+		.book_list li a .book_img{margin:0 auto;float:inherit}
+		.book_list li a .book_info{float:inherit;width:100%;margin:30px 0 0 0}
+
+
+		/** 게시판 th width **/
+		.bd_bk_no03,.bd_bk_no06{display:none}
+		.bd_collection th:nth-child(3),.bd_collection td:nth-child(3){display:none}
+		.bd_collection th:nth-child(6),.bd_collection td:nth-child(6){display:none}
+		.bd_collection th:nth-child(5),.bd_collection td:nth-child(5){border-right:0}
+
+		.bd_bk_no01{width:10%}
+		.bd_bk_no02{width:25%}
+		.bd_bk_no05{width:20%}
+
+
+		.bk_thum ul li a {min-height:130px; padding:15px}
+		.bk_thum_img {position:relative; top:0; left:0; margin:0 auto;}
+		.bk_thum_img img{height:200px; width:100%; border-radius:6px}
+		.bk_thum_name{padding-bottom:14px;}
+		.bk_thum_cont{padding-top:14px; border-top:1px solid #e3e3e3; height:42px}
+	
+
+}
+/** 480px 끝 **/
+
+/** 414px 시작 **/
+@media screen and (max-width:414px){
+	/** 게시판 목록 */
+	.table_type01 .date{display:none;}
+
+	/** 기본 버튼 **/
+	.bd_btn_area a{display:block;width:100%;margin-bottom:5px;text-align:center !important}
+
+	/** 게시판-공지사항 목록 **/
+	.bd_type01 .bd_num{width:13%}
+	.bd_type01 .bd_title{width:68%}
+	.bd_type01 .bd_file{width:19%}
+	.bd_type01 .bd_department,
+	.bd_type01 th:nth-child(3),.bd_type01 td:nth-child(3){display:none;}
+	.bd_type01 .bd_date,
+	.bd_type01 th:nth-child(5),.bd_type01 td:nth-child(5){display:none;}
+	.bd_type01 th:nth-child(2),.bd_type01 td:nth-child(2){border-right:0}
+
+	/** 게시판-목록 type02 **/
+	.bd_type02 .bd_num{width:8%}
+	.bd_type02 .bd_num_inquiry,
+	.bd_type02 th:nth-child(5),.bd_type02 td:nth-child(5){display:none}
+	.bd_type02 th:nth-child(3),.bd_type02 td:nth-child(3){border-right-width:0}
+
+	/** 게시판-목록 type03 **/
+	.bd_type03 .bd_num{width:12%}
+	.bd_type03 .bd_title{width:66%}
+	.bd_type03 .bd_process{width:22%}
+	.bd_type03 .bd_department,
+	.bd_type03 th:nth-child(3),.bd_type03 td:nth-child(3){display:none}
+
+	/** 게시판-공지사항 상세 **/	
+	.bd_type01_view .mob_row th{width:30%}
+	.bd_type01_view .mob_row td{width:70%}
+	/** 게시판-공지사항 상세 : 글정보 **/
+	.bd_view_info li{display:block}
+
+	/** 게시판-설문조사 목록 **/
+	.bd_survey .bd_title{width:59%}
+	.bd_survey .bd_state{width:28%}
+	/** 게시판-설문조사 상세 - 결과 **/
+	.lst_check.result .bar_bg{width:100%}
+	.lst_check.result li div strong em{text-shadow:0 0 4px #fff}
+
+	/** 문화행사 **/
+	.bul_tip{padding:0 10px}
+	.bul_tip span{display:block}
+
+	/** 자료검색 **/
+	.s_search .wordbox{width:calc(100% - 30px);margin-left:0;padding:5px 10px 0;border-top:1px dotted #d7d7d7;border-left-width:0}
+	.s_search .wordbox label{left:10px}
+
+	
+}
+/** 414px 끝 **/
+
+/** 384px 시작 **/
+@media screen and (max-width:384px){
+
+	/** 기본 버튼 **/
+	.bd_btn_area a{display:block;width:100%;margin-bottom:5px;text-align:center !important}
+
+	/** 게시판-공지사항 목록 **/
+	.bd_type01 .bd_num{width:17%}
+	.bd_type01 .bd_title{width:83%}
+	.bd_type01 th:nth-child(2),.bd_type01 td:nth-child(2){border-right-width:0}
+	.bd_type01 .bd_file,
+	.bd_type01 th:nth-child(4),.bd_type01 td:nth-child(4){display:none}
+
+	/** 게시판-목록 type02 **/
+	.bd_type02 th,.bd_type02 td{font-size:13px;padding:10px 5px}
+
+	/** 게시판-목록 type03 **/
+
+	/** 게시판-설문조사 목록 **/
+	.bd_survey .bd_title{width:57%}
+	.bd_survey .bd_state{width:30%}
+
+	/** 게시판-설문조사 상세 - 결과 **/
+	.lst_check.result li div{width:95%;margin-bottom:10px;padding-top:10px;border-bottom:1px dotted #b4b4b4}
+	.lst_check.result li div strong{position:relative;top:inherit;left:inherit}
+
+	/** 게시판 th width **/
+	.bd_bk_no01{width:15%}
+	.bd_bk_no05{width:25%}
+
+
+	.photo_list ul li {width:100%; margin: 0px 0% 10px;}
+
+
+}
+/** 384px 끝 **/
+
+/** 375px 시작 **/
+@media screen and (max-width:375px){
+}
+/** 375px 끝 **/
+
+/** 360px 시작 **/
+@media screen and (max-width:360px){
+
+	/** 게시판-목록 type02 **/
+	.bd_type02 .bd_num{width:9%}
+	.bd_type02 .bd_file{width:14%}
+
+	/** 게시판-목록 type03 **/
+	.bd_type03 .bd_num{width:14%}
+	.bd_type03 .bd_title{width:62%}
+	.bd_type03 .bd_process{width:24%}
+
+	/** 게시판-설문조사 목록 **/
+	.bd_survey .bd_title{width:48%}
+
+}
+/** 360px 끝 **/
+
+/** 320px 시작 **/
+@media screen and (max-width:320px){
+
+		/** 게시판-설문조사 목록 **/
+		.bd_survey .bd_title{width:38%}
+
+		/** 일정 **/	
+		.box_calendar_area .area_condition .date{height:30px}
+		.area_condition .date p a{width:30px;height:30px}
+		.area_condition .date p strong{padding-top:5px;font-size:20px}
+
+		.calendar_lst h4{line-height:30px;font-size:20px}
+		.calendar_lst h4 span{font-size:18px}
+}
+/** 320px 끝 **/
+
+
+
+.notice{font-weight:bold}

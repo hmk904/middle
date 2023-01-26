@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="AttachNotice-Mapper">
+
+	<select id="selectAttachNoticeByAttachNoticeNum" resultType="attachnotice">
+		select * 
+		from AttachNotice 
+		where AttachNoticeNum= #{AttachNoticeNum} 			  	
+	</select>
+	
+	<select id="selectAttachNoticeByAttachNoticeano"  resultType="attachnotice">
+		select *
+		from AttachNotice
+		where AttachNoticeano = #{AttachNoticeano}
+	</select>
+	
+	<update id="insertAttachNotice">
+		insert into
+		AttachNotice (AttachNoticeano, AttachNoticeuploadPath, AttachNoticefileName, AttachNotefileType, AttachNoticenum, AttachNoticeattacher)
+		values (AttachNotice_seq.nextval, #{AttachNoticeuploadPath}, #{AttachNoticefileName},#{AttachNoticefileType},#{AttachNoticenum},#{AttachNoticeattacher} )
+	</update>
+	
+	
+	<update id="deleteAllAttachNotice">
+		delete from AttachNotice where AttachNoticeano = #{AttachNoticeano}
+	</update>
+	
+	<update id="deleteAttachNotice">
+		delete 
+		from AttachNotice 
+		where AttachNoticeNum = #{AttachNoticeNum}
+	</update>
+	
+</mapper>
+
+
+
+
+
+

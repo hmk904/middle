@@ -1,0 +1,49 @@
+<decorators defaultdir="/WEB-INF/decorator">
+
+	<decorator name="notice" page="book_decorator.jsp">
+		<pattern>*/notice/*.do</pattern>
+	</decorator>
+
+	<decorator name="hope" page="book_decorator.jsp">
+		<pattern>*/hope/*.do</pattern>
+	</decorator>
+
+	<decorator name="news" page="book_decorator.jsp">
+		<pattern>*/news/*.do</pattern>
+	</decorator>
+
+	<decorator name="information" page="book_decorator.jsp">
+		<pattern>*/information/*.do</pattern>
+	</decorator>
+
+	<decorator name="video" page="book_decorator.jsp">
+		<pattern>*/video/*.do</pattern>
+	</decorator>
+
+	<decorator name="question" page="book_decorator.jsp">
+		<pattern>*/question/*</pattern>
+	</decorator>
+
+	<decorator name="newbook" page="book_decorator.jsp">
+		<pattern>*/newBook/*</pattern>
+	</decorator>
+
+	<decorator name="librarybook" page="book_decorator.jsp">
+		<pattern>*/libraryBook/*</pattern>
+		
+	</decorator>
+
+	<decorator name="openWindow" page="open_decorator.jsp">
+		<pattern>/**/*.do</pattern>
+		<pattern>/main.do</pattern>
+		<pattern>/member/*</pattern>
+		<pattern>/*libraryBook*/detail.do</pattern>
+		<pattern>/*newBook*/detail.do</pattern>
+	</decorator>
+
+	<excludes>
+		<pattern>/resources/*</pattern>
+		<pattern>/common/*</pattern>
+		<pattern>/member/*</pattern>
+	</excludes>
+</decorators>

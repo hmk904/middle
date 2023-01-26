@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Hope-Mapper">
+	<sql id="search">
+		<if test="searchType == 't'.toString()">
+			and hopeTitle like '%'||#{keyword}||'%'			
+		</if>
+		<if test="searchType == 'w'.toString()">
+			and hopeWriter like '%'||#{keyword}||'%'			
+		</if>
+		<if test="searchType == 'c'.toString()">
+			and hopeContent like '%'||#{keyword}||'%'			
+		</if>
+		<if test="searchType == 'tc'.toString()">
+			and (
+			hopeTitle like '%'||#{keyword}||'%'
+			or
+			hopeContent like '%'||#{keyword}||'%'						
+			)			
+		</if>
+		<if test="searchType == 'cw'.toString()">
+			and (
+			hopeWriter like '%'||#{keyword}||'%'
+			or
+			hopeContent like '%'||#{keyword}||'%'						
+			)			
+		</if>
+		<if test="searchType == 'tcw'.toString()">
+			and (
+			hopeTitle like '%'||#{keyword}||'%'
+			or
+			hopeWriter like '%'||#{keyword}||'%'
+			or
+			hopeContent like '%'||#{keyword}||'%'						
+			)			
+		</if>
+	</sql>
+	
+	<select id="selectSearchHopeList" resultType="hope">
+		select
+		*
+		from
+		Hope
+		where hopeNum is not null  			  	
+		<include refid="search" />
+		order by hopeNum desc
+	</select>
+	<select id="selectSearchHopeListCount"  resultType="int">
+		select
+		count(*)
+		from
+		Hope
+		where hopeNum is not null  			  	
+		<include refid="search" />
+		order by hopeNum desc
+	</select>
+	
+	<update id="insertHope">
+		insert 
+		into 
+		HOPE(hopeNum,hopeTitle,hopeWriter,hopeContent)
+		values
+		(#{hopeNum},#{hopeTitle},#{hopeWriter},#{hopeContent})
+	</update>
+	<select id="selectHopeSeqNext" resultType="int">
+		select HOPE_SEQ.nextval as hopeNum from dual
+	</select>
+	
+	
+	<select id="selectHopeByHopeNum"  resultType="hope">
+		select * 
+		from Hope 
+		where hopeNum=#{hopeNum}
+	</select>
+	<update id="increaseHopeSearch" parameterType="int">
+		update 
+		Hope 
+		set 
+		hopeSearch=hopeSearch+1 
+		where HopeNum=#{hopeNum}
+	</update>
+	
+	
+	
+	<update id="updateHope" parameterType="hope">
+		update 
+		Hope
+		set 
+		hopeTitle=#{hopeTitle}, hopeContent=#{hopeContent}, hopeDate=sysdate 
+		where hopeNum=#{hopeNum}
+	</update>
+	
+	<update id="updateHopeByWriterId" parameterType="hope">
+		update 
+		Hope
+		set 
+		hopeTitle=#{hopeTitle}, hopeContent=#{hopeContent}, hopeDate=sysdate 
+		where hopeWriter=#{hopeWriter}
+	</update>
+	
+	<update id="deleteHope" parameterType="int">
+		delete 
+		from hope 
+		where hopeNum=#{hopeNum}
+	</update>
+	
+</mapper>
+
+
+
+
+

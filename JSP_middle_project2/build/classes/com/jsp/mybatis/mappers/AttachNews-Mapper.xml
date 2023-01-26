@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="AttachNews-Mapper">
+	
+	<select id="selectAttachNewsByAttachNewsNum" resultType="attachnews">
+		select * 
+		from AttachNews 
+		where AttachNewsNum= #{AttachNewsNum} 			  	
+	</select>
+	
+	<select id="selectAttachNewsByAttachNewsano"  resultType="attachnews">
+		select *
+		from AttachNews
+		where AttachNewsano = #{AttachNewsano}
+	</select>
+	
+	<update id="insertAttachNews">
+		insert into 
+		AttachNews (AttachNewsano, AttachNewsuploadpath, AttachNewsfilename, AttachNewsfiletype, AttachNewsnum, AttachNewsattacher)
+		values (AttachNews_seq.nextval, #{AttachNewsuploadPath}, #{AttachNewsfileName},#{AttachNewsfileType}, 
+				#{AttachNewsnum},#{AttachNewsattacher} )
+	</update>
+	
+	
+	<update id="deleteAllAttachNews">
+		delete from AttachNews where AttachNewsano = #{AttachNewsano}
+	</update>
+	
+	<update id="deleteAttachNews">
+		delete 
+		from AttachNews 
+		where AttachNewsnum = #{AttachNewsnum}
+	</update>
+	
+</mapper>
+
+
+
+
+
+
