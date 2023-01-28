@@ -11,6 +11,8 @@
 		<typeAlias type="java.lang.Integer" alias="int" />
 		
 		<typeAlias type="com.jsp.dto.MemberVO" alias="member" />	
+		<typeAlias type="com.jsp.dto.NewBookVO"  alias="newbook"/>
+		<typeAlias type="com.jsp.dto.LibraryBookVO"  alias="librarrybook"/>
 		<typeAlias type="com.jsp.dto.NoticeVO" alias="notice" />
 		<typeAlias type="com.jsp.dto.QuestionVO" alias="question" />
 		<typeAlias type="com.jsp.dto.HopeVO" alias="hope" />
@@ -44,6 +46,9 @@
 	</environments>
 	<mappers>
 	    <mapper resource="com/jsp/mybatis/mappers/Member-Mapper.xml"/> 
+	    <mapper resource="com/jsp/mybatis/mappers/NewBook-Mapper.xml"/> 
+	    <mapper resource="com/jsp/mybatis/mappers/LibraryBook-Mapper.xml"/> 
+
 	    <mapper resource="com/jsp/mybatis/mappers/Information-Mapper.xml"/>
 	    <mapper resource="com/jsp/mybatis/mappers/News-Mapper.xml"/>
 	    <mapper resource="com/jsp/mybatis/mappers/Notice-Mapper.xml"/>
